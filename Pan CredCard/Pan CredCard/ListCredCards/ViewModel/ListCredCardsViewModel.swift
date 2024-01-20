@@ -15,7 +15,7 @@ protocol CardsViewModelProtocol: AnyObject {
 class CardsViewModel {
     
     private var service = CardsService()
-    private var cardsList: Cards?
+    private var cardsList: ListCards?
     weak var delegate: CardsViewModelProtocol?
     
     func fetchCardsAlamofire() {

@@ -24,7 +24,6 @@ class CredCardsTableViewCell: UITableViewCell {
     }
     
     func configElements() {
-//     imageCardImageView.reloadInputViews()
     }
     func setupCell(card: Card) {
         if let image = convertBase64ToImage(card.image) {

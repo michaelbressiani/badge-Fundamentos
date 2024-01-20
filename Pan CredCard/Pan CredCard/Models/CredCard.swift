@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Cards: Decodable {
+struct ListCards: Decodable {
     let cardsList: [[String: Card]]
 }
 
