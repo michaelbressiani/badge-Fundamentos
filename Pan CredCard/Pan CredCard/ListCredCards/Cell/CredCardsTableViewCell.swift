@@ -9,24 +9,33 @@ import UIKit
 
 class CredCardsTableViewCell: UITableViewCell {
     
-    static let identifier: String = "NameTableViewCell"
+    @IBOutlet weak var imageCardImageView: UIImageView!
+    
+    static let identifier: String = "CredCardsTableViewCell"
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configElements()
     }
     
     func configElements() {
-//        nameCardLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+//     imageCardImageView.reloadInputViews()
+    }
+    func setupCell(card: Card) {
+        if let image = convertBase64ToImage(card.image) {
+            imageCardImageView.image = image
+        }
     }
     
-//    func setupCell(card: Card) {
-//        nameCardLabel.text = Card.name
-//    }
-    
+    func convertBase64ToImage(_ base64String: String) -> UIImage? {
+        if let imageData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) {
+            return UIImage(data: imageData)
+        }
+        return nil
+    }
 }

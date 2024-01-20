@@ -21,6 +21,7 @@
 		DF4AE46D2B5C43DB00C7D7C0 /* CredCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE46C2B5C43DB00C7D7C0 /* CredCard.swift */; };
 		DF4AE4702B5C449600C7D7C0 /* Cards.json in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE46F2B5C449600C7D7C0 /* Cards.json */; };
 		DF4AE4732B5C451B00C7D7C0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DF4AE4722B5C451B00C7D7C0 /* Alamofire */; };
+		DF4AE4762B5C45AB00C7D7C0 /* CardsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4752B5C45AB00C7D7C0 /* CardsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DF4AE4692B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCredCardsViewModel.swift; sourceTree = "<group>"; };
 		DF4AE46C2B5C43DB00C7D7C0 /* CredCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredCard.swift; sourceTree = "<group>"; };
 		DF4AE46F2B5C449600C7D7C0 /* Cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cards.json; sourceTree = "<group>"; };
+		DF4AE4752B5C45AB00C7D7C0 /* CardsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		DF4AE4442B5C2C8E00C7D7C0 /* Pan CredCard */ = {
 			isa = PBXGroup;
 			children = (
+				DF4AE4742B5C457300C7D7C0 /* Service */,
 				DF4AE46E2B5C446C00C7D7C0 /* Mock */,
 				DF4AE46B2B5C43CD00C7D7C0 /* Models */,
 				DF4AE45D2B5C2FA600C7D7C0 /* ListCredCards */,
@@ -144,6 +147,14 @@
 				DF4AE46F2B5C449600C7D7C0 /* Cards.json */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		DF4AE4742B5C457300C7D7C0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DF4AE4752B5C45AB00C7D7C0 /* CardsService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 				DF4AE46A2B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift in Sources */,
 				DF4AE45F2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift in Sources */,
 				DF4AE44A2B5C2C8E00C7D7C0 /* SplashScreenViewController.swift in Sources */,
+				DF4AE4762B5C45AB00C7D7C0 /* CardsService.swift in Sources */,
 				DF4AE46D2B5C43DB00C7D7C0 /* CredCard.swift in Sources */,
 				DF4AE4462B5C2C8E00C7D7C0 /* AppDelegate.swift in Sources */,
 				DF4AE4642B5C3A3000C7D7C0 /* CredCardsTableViewCell.swift in Sources */,
