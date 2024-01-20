@@ -34,6 +34,10 @@ class CardsViewModel {
         return cardsList?.cardsList.count ?? 0
     }
     
+    func getCardName(indexPath: IndexPath) -> String {
+        return cardsList?.cardsList[indexPath.row].keys.first ?? ""
+    }
+    
     func getCardList(indexPath: IndexPath) -> Card {
         return cardsList?.cardsList[indexPath.row].values.first ??
                  Card(alias: "", credit: false, debit: false, number: "", codSec: "", image: "")

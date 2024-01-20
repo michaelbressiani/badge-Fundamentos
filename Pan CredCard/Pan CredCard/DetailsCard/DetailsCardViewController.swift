@@ -8,12 +8,20 @@
 import UIKit
 
 class DetailsCardViewController: UIViewController {
-
-    @IBOutlet weak var aliasCardLabel: UILabel!
     
+    @IBOutlet weak var credCardImageImageView: UIImageView!
+    @IBOutlet weak var credCardNameLabel: UILabel!
+    @IBOutlet weak var credCardAliasLabel: UILabel!
+    @IBOutlet weak var credCardIsCreditLabel: UILabel!
+    @IBOutlet weak var credCardIsDebitLabel: UILabel!
+    @IBOutlet weak var credCardNumberLabel: UILabel!
+    @IBOutlet weak var credCardCodSecLabel: UILabel!
+    
+    var cardName: String = ""
     var card: Card = Card(alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
     
-    init?(coder: NSCoder, card: Card) {
+    init?(coder: NSCoder, cardName: String, card: Card) {
+        self.cardName = cardName
         self.card = card
         super.init(coder: coder)
     }
@@ -24,9 +32,23 @@ class DetailsCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        aliasCardLabel.text = card.alias
+        
+        if let image = convertBase64ToImage(card.image) {
+            credCardImageImageView.image = image
+        }
+        
+        func convertBase64ToImage(_ base64String: String) -> UIImage? {
+            if let imageData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) {
+                return UIImage(data: imageData)
+            }
+            return nil
+        }
+        
+        credCardNameLabel.text = cardName
+        credCardAliasLabel.text = card.alias
+        credCardIsCreditLabel.text = String(card.credit)
+//        credCardDebitLabel.text = String(card.debit)
+        credCardNumberLabel.text = card.number
+        credCardCodSecLabel.text = card.codSec
     }
-    
-
-   
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF3493922B5C53A0004BFD68 /* DetailsCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3493912B5C53A0004BFD68 /* DetailsCardViewController.swift */; };
-		DF3493942B5C53B2004BFD68 /* DetailsCardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3493932B5C53B2004BFD68 /* DetailsCardViewController.storyboard */; };
+		DF3493982B5C65C8004BFD68 /* DetailsCardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3493972B5C65C8004BFD68 /* DetailsCardViewController.storyboard */; };
 		DF4AE4462B5C2C8E00C7D7C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */; };
 		DF4AE4482B5C2C8E00C7D7C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4472B5C2C8E00C7D7C0 /* SceneDelegate.swift */; };
 		DF4AE44A2B5C2C8E00C7D7C0 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4492B5C2C8E00C7D7C0 /* SplashScreenViewController.swift */; };
@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		DF3493912B5C53A0004BFD68 /* DetailsCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardViewController.swift; sourceTree = "<group>"; };
-		DF3493932B5C53B2004BFD68 /* DetailsCardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsCardViewController.storyboard; sourceTree = "<group>"; };
+		DF3493972B5C65C8004BFD68 /* DetailsCardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsCardViewController.storyboard; sourceTree = "<group>"; };
 		DF4AE4422B5C2C8E00C7D7C0 /* Pan CredCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pan CredCard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF4AE4472B5C2C8E00C7D7C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				DF3493912B5C53A0004BFD68 /* DetailsCardViewController.swift */,
-				DF3493932B5C53B2004BFD68 /* DetailsCardViewController.storyboard */,
+				DF3493972B5C65C8004BFD68 /* DetailsCardViewController.storyboard */,
 			);
 			path = DetailsCard;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF4AE4522B5C2C8F00C7D7C0 /* LaunchScreen.storyboard in Resources */,
-				DF3493942B5C53B2004BFD68 /* DetailsCardViewController.storyboard in Resources */,
+				DF3493982B5C65C8004BFD68 /* DetailsCardViewController.storyboard in Resources */,
 				DF4AE44F2B5C2C8F00C7D7C0 /* Assets.xcassets in Resources */,
 				DF4AE44D2B5C2C8E00C7D7C0 /* Main.storyboard in Resources */,
 				DF4AE4612B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard in Resources */,
