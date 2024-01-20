@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		DF4AE4462B5C2C8E00C7D7C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */; };
 		DF4AE4482B5C2C8E00C7D7C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4472B5C2C8E00C7D7C0 /* SceneDelegate.swift */; };
-		DF4AE44A2B5C2C8E00C7D7C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4492B5C2C8E00C7D7C0 /* ViewController.swift */; };
+		DF4AE44A2B5C2C8E00C7D7C0 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4492B5C2C8E00C7D7C0 /* SplashScreenViewController.swift */; };
 		DF4AE44D2B5C2C8E00C7D7C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE44B2B5C2C8E00C7D7C0 /* Main.storyboard */; };
 		DF4AE44F2B5C2C8F00C7D7C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE44E2B5C2C8F00C7D7C0 /* Assets.xcassets */; };
 		DF4AE4522B5C2C8F00C7D7C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE4502B5C2C8F00C7D7C0 /* LaunchScreen.storyboard */; };
-		DF4AE45B2B5C2D9900C7D7C0 /* SplashScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE45A2B5C2D9900C7D7C0 /* SplashScreenCoordinator.swift */; };
+		DF4AE45F2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE45E2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift */; };
+		DF4AE4612B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE4602B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DF4AE4422B5C2C8E00C7D7C0 /* Pan CredCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pan CredCard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF4AE4472B5C2C8E00C7D7C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DF4AE4492B5C2C8E00C7D7C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF4AE4492B5C2C8E00C7D7C0 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		DF4AE44C2B5C2C8E00C7D7C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF4AE44E2B5C2C8F00C7D7C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF4AE4512B5C2C8F00C7D7C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF4AE4532B5C2C8F00C7D7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF4AE45A2B5C2D9900C7D7C0 /* SplashScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenCoordinator.swift; sourceTree = "<group>"; };
+		DF4AE45E2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCredCardsViewController.swift; sourceTree = "<group>"; };
+		DF4AE4602B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListCredCardsViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		DF4AE4442B5C2C8E00C7D7C0 /* Pan CredCard */ = {
 			isa = PBXGroup;
 			children = (
+				DF4AE45D2B5C2FA600C7D7C0 /* ListCredCards */,
 				DF4AE4592B5C2D0C00C7D7C0 /* SplashScreen */,
 				DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */,
 				DF4AE4472B5C2C8E00C7D7C0 /* SceneDelegate.swift */,
@@ -71,19 +74,19 @@
 		DF4AE4592B5C2D0C00C7D7C0 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				DF4AE45C2B5C2DAB00C7D7C0 /* Coordinator */,
-				DF4AE4492B5C2C8E00C7D7C0 /* ViewController.swift */,
+				DF4AE4492B5C2C8E00C7D7C0 /* SplashScreenViewController.swift */,
 				DF4AE44B2B5C2C8E00C7D7C0 /* Main.storyboard */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
-		DF4AE45C2B5C2DAB00C7D7C0 /* Coordinator */ = {
+		DF4AE45D2B5C2FA600C7D7C0 /* ListCredCards */ = {
 			isa = PBXGroup;
 			children = (
-				DF4AE45A2B5C2D9900C7D7C0 /* SplashScreenCoordinator.swift */,
+				DF4AE45E2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift */,
+				DF4AE4602B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard */,
 			);
-			path = Coordinator;
+			path = ListCredCards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +150,7 @@
 				DF4AE4522B5C2C8F00C7D7C0 /* LaunchScreen.storyboard in Resources */,
 				DF4AE44F2B5C2C8F00C7D7C0 /* Assets.xcassets in Resources */,
 				DF4AE44D2B5C2C8E00C7D7C0 /* Main.storyboard in Resources */,
+				DF4AE4612B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,10 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF4AE44A2B5C2C8E00C7D7C0 /* ViewController.swift in Sources */,
+				DF4AE45F2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift in Sources */,
+				DF4AE44A2B5C2C8E00C7D7C0 /* SplashScreenViewController.swift in Sources */,
 				DF4AE4462B5C2C8E00C7D7C0 /* AppDelegate.swift in Sources */,
 				DF4AE4482B5C2C8E00C7D7C0 /* SceneDelegate.swift in Sources */,
-				DF4AE45B2B5C2D9900C7D7C0 /* SplashScreenCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
