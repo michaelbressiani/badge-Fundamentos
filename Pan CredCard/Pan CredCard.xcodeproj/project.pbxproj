@@ -15,6 +15,9 @@
 		DF4AE4522B5C2C8F00C7D7C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE4502B5C2C8F00C7D7C0 /* LaunchScreen.storyboard */; };
 		DF4AE45F2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE45E2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift */; };
 		DF4AE4612B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE4602B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard */; };
+		DF4AE4642B5C3A3000C7D7C0 /* CredCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4622B5C3A3000C7D7C0 /* CredCardsTableViewCell.swift */; };
+		DF4AE4652B5C3A3000C7D7C0 /* CredCardsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE4632B5C3A3000C7D7C0 /* CredCardsTableViewCell.xib */; };
+		DF4AE46A2B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4692B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		DF4AE4532B5C2C8F00C7D7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF4AE45E2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCredCardsViewController.swift; sourceTree = "<group>"; };
 		DF4AE4602B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListCredCardsViewController.storyboard; sourceTree = "<group>"; };
+		DF4AE4622B5C3A3000C7D7C0 /* CredCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredCardsTableViewCell.swift; sourceTree = "<group>"; };
+		DF4AE4632B5C3A3000C7D7C0 /* CredCardsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredCardsTableViewCell.xib; sourceTree = "<group>"; };
+		DF4AE4692B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCredCardsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +89,37 @@
 		DF4AE45D2B5C2FA600C7D7C0 /* ListCredCards */ = {
 			isa = PBXGroup;
 			children = (
+				DF4AE4682B5C3C9200C7D7C0 /* ViewModel */,
+				DF4AE4672B5C3A6A00C7D7C0 /* ViewController */,
+				DF4AE4662B5C3A5100C7D7C0 /* Cell */,
+			);
+			path = ListCredCards;
+			sourceTree = "<group>";
+		};
+		DF4AE4662B5C3A5100C7D7C0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DF4AE4622B5C3A3000C7D7C0 /* CredCardsTableViewCell.swift */,
+				DF4AE4632B5C3A3000C7D7C0 /* CredCardsTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DF4AE4672B5C3A6A00C7D7C0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
 				DF4AE45E2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift */,
 				DF4AE4602B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard */,
 			);
-			path = ListCredCards;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DF4AE4682B5C3C9200C7D7C0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF4AE4692B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +184,7 @@
 				DF4AE44F2B5C2C8F00C7D7C0 /* Assets.xcassets in Resources */,
 				DF4AE44D2B5C2C8E00C7D7C0 /* Main.storyboard in Resources */,
 				DF4AE4612B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard in Resources */,
+				DF4AE4652B5C3A3000C7D7C0 /* CredCardsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,9 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4AE46A2B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift in Sources */,
 				DF4AE45F2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift in Sources */,
 				DF4AE44A2B5C2C8E00C7D7C0 /* SplashScreenViewController.swift in Sources */,
 				DF4AE4462B5C2C8E00C7D7C0 /* AppDelegate.swift in Sources */,
+				DF4AE4642B5C3A3000C7D7C0 /* CredCardsTableViewCell.swift in Sources */,
 				DF4AE4482B5C2C8E00C7D7C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
