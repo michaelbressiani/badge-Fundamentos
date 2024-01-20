@@ -45,7 +45,12 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        DetailsCoordinator(navigationController: self.navigationController).navigationDatails()
+        
+        let vcString = UIStoryboard(name: String(describing: DetailsCardViewController.self), bundle: nil).instantiateViewController(identifier: "DetailsCardViewController") { coder -> DetailsCardViewController? in
+            return DetailsCardViewController(coder: coder, card: self.viewModel.getCardList(indexPath: indexPath) )
+        }
+        
+        self.navigationController?.pushViewController(vcString, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,7 +60,6 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension ListCredCardsViewController: CardsViewModelProtocol {
     func errorRequest() {
-        
     }
     
     func successRequest() {

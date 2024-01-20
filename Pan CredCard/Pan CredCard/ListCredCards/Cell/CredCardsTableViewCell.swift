@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol convertBase64ToImage {
+    func convertBase64ToImage(_ base64String: String) -> UIImage
+}
+
 class CredCardsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageCardImageView: UIImageView!
@@ -17,7 +21,6 @@ class CredCardsTableViewCell: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         configElements()
@@ -25,6 +28,7 @@ class CredCardsTableViewCell: UITableViewCell {
     
     func configElements() {
     }
+    
     func setupCell(card: Card) {
         if let image = convertBase64ToImage(card.image) {
             imageCardImageView.image = image
@@ -38,3 +42,4 @@ class CredCardsTableViewCell: UITableViewCell {
         return nil
     }
 }
+
