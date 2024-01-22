@@ -11,7 +11,7 @@ class ListCredCardsViewController: UIViewController {
     
     @IBOutlet weak var listCredCardsTableView: UITableView!
     
-    var viewModel: CardsViewModel = CardsViewModel()
+    var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,8 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CredCardsTableViewCell.identifier, for: indexPath) as? CredCardsTableViewCell
-        cell?.setupCell(card: viewModel.getCardList(indexPath: indexPath))        
+        cell?.setupCell(card: viewModel.getCardList(indexPath: indexPath))
+        viewModel.accessibilityCell(cell: cell ?? UITableViewCell(), indexPath: indexPath)
         return cell ?? UITableViewCell()
     }
     

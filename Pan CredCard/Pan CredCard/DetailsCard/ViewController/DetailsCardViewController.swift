@@ -19,6 +19,7 @@ class DetailsCardViewController: UIViewController {
     
     var cardName: String = ""
     var card: Card = Card(alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+    var viewModel: DetailsCardViewModel = DetailsCardViewModel()
     
     init?(coder: NSCoder, cardName: String, card: Card) {
         self.cardName = cardName
@@ -32,23 +33,25 @@ class DetailsCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let image = convertBase64ToImage(card.image) {
-            credCardImageImageView.image = image
-        }
-        
-        func convertBase64ToImage(_ base64String: String) -> UIImage? {
-            if let imageData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) {
-                return UIImage(data: imageData)
-            }
-            return nil
-        }
-        
+        elementsConfig()
+        accessebilityLabels()
+    }
+    
+    func elementsConfig() {
+        credCardImageImageView.image = viewModel.convertBase64ToImage(base64String: card.image)
         credCardNameLabel.text = cardName
         credCardAliasLabel.text = card.alias
         credCardIsCreditLabel.text = String(card.credit)
         credCardIsDebitLabel.text = String(card.debit ?? false)
         credCardNumberLabel.text = card.number
         credCardCodSecLabel.text = card.codSec
+    }
+    
+    func accessebilityLabels() {
+        viewModel.accessibilityLabel(label: credCardNameLabel)
+        viewModel.accessibilityLabel(label: credCardAliasLabel)
+        viewModel.accessibilityLabel(label: credCardIsCreditLabel)
+        viewModel.accessibilityLabel(label: credCardIsDebitLabel)
+        viewModel.accessibilityLabel(label: credCardCodSecLabel)
     }
 }

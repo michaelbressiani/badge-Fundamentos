@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CardsViewModelProtocol: AnyObject {
     func successRequest()
     func errorRequest()
 }
 
-class CardsViewModel {
+class ListCredCardsViewModel {
     
     private var service = CardsService()
     private var cardsList: ListCards?
@@ -43,4 +44,8 @@ class CardsViewModel {
                  Card(alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
     }
     
+    func accessibilityCell(cell: UITableViewCell, indexPath: IndexPath) {
+        cell.isAccessibilityElement = true
+        cell.accessibilityHint = "Cartão: \(getCardName(indexPath: indexPath))"
+    }
 }
