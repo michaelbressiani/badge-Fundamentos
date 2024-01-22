@@ -47,7 +47,7 @@ class DetailsCardViewController: UIViewController {
         credCardNameLabel.text = cardName
         credCardAliasLabel.text = card.alias
         credCardIsCreditLabel.text = String(card.credit)
-//        credCardDebitLabel.text = String(card.debit)
+        credCardIsDebitLabel.text = String(card.debit ?? false)
         credCardNumberLabel.text = card.number
         credCardCodSecLabel.text = card.codSec
     }
