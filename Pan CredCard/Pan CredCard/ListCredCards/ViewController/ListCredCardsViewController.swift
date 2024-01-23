@@ -47,7 +47,8 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vcString = UIStoryboard(name: String(describing: DetailsCardViewController.self), bundle: nil).instantiateViewController(identifier: "DetailsCardViewController") { coder -> DetailsCardViewController? in
+        let dcString = String(describing: DetailsCardViewController.self)
+        let vcString = UIStoryboard(name: dcString, bundle: nil).instantiateViewController(identifier: dcString) { coder -> DetailsCardViewController? in
             return DetailsCardViewController(coder: coder, cardName: self.viewModel.getCardName(indexPath: indexPath), card: self.viewModel.getCardList(indexPath: indexPath) )
         }
         
