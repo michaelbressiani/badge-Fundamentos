@@ -18,7 +18,6 @@ class CardsService {
             switch response.result {
             case .success(let cardsList):
                 completion(.success(cardsList))
-                self.secureStorageManager.saveCardNumbersToKeychain(cardsList: cardsList.cardsList.flatMap { $0.compactMap { $0.value.number } })
             case .failure(let failure):
                 completion(.failure(failure))
             }

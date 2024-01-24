@@ -12,7 +12,7 @@ struct ListCards: Decodable {
 }
 
 // MARK: - CardsList
-struct Card: Decodable {
+struct Card: Codable {
     let alias: String?
     let credit: Bool
     let debit: Bool?

@@ -10,35 +10,39 @@ import Security
 
 class SecureStorageManager {
     
-    private let cardNumbersKeychainService = "Pan CredCard"
-    private let cardNumbersKeychainAccount = "CredCardNumbers"
+    private let cardKeychainService = "PanCredCard"
+    private let cardKeychainAccount = "CredCard"
     
-    func saveCardNumbersToKeychain(cardsList: [String]) {
-            let cardNumbers = cardsList
-            if let cardNumbersData = try? JSONEncoder().encode(cardNumbers) {
-                let query: [String: Any] = [
-                    kSecClass as String: kSecClassGenericPassword,
-                    kSecAttrService as String: cardNumbersKeychainService,
-                    kSecAttrAccount as String: cardNumbersKeychainAccount,
-                    kSecValueData as String: cardNumbersData
+    func saveCardToKeychain(card: Card, aliasCard: String) {
+        do {
+            let cardData = try JSONEncoder().encode(card)
+            
+            let query: [String: Any] = [
+                kSecClass as String: kSecClassGenericPassword,
+                kSecAttrService as String: cardKeychainService,
+                kSecAttrAccount as String: cardKeychainAccount + aliasCard,
+                kSecValueData as String: cardData
+            ]
+            
+            let status = SecItemAdd(query as CFDictionary, nil)
+            
+            if status == errSecSuccess {
+                print("Armazenamento do cartão no Keychain realizado com sucesso.")
+            } else if status == errSecDuplicateItem {
+                let updateQuery: [String: Any] = [
+                    kSecValueData as String: cardData
                 ]
-                let status = SecItemAdd(query as CFDictionary, nil)
-
-                if status == errSecSuccess {
-                    print("Armazenamento dos números dos cartões no keychain realizado com sucesso.")
-                } else if status == errSecDuplicateItem {
-                    let updateQuery: [String: Any] = [
-                        kSecValueData as String: cardNumbersData
-                    ]
-                    
-                    let updateStatus = SecItemUpdate(query as CFDictionary, updateQuery as CFDictionary)
-
-                    if updateStatus == errSecSuccess {
-                        print("Sucesso na atualização dos números dos cartões no Keychain.")
-                    }
-                } else {
-                    print("Houve um erro ao armazenar os números dos cartões no Keychain. Código do erro: \(status)")
+                
+                let updateStatus = SecItemUpdate(query as CFDictionary, updateQuery as CFDictionary)
+                
+                if updateStatus == errSecSuccess {
+                    print("Sucesso na atualização do cartão no Keychain.")
                 }
+            } else {
+                print("Erro ao armazenar o cartão no Keychain. Código do erro: \(status)")
             }
+        } catch {
+            print("Erro ao codificar o cartão: \(error)")
         }
+    }
 }

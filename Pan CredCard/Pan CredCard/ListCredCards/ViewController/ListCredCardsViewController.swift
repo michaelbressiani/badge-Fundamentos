@@ -12,6 +12,7 @@ class ListCredCardsViewController: UIViewController {
     @IBOutlet weak var listCredCardsTableView: UITableView!
     
     var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
+    var secureStorageManager: SecureStorageManager = SecureStorageManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,9 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+        self.secureStorageManager.saveCardToKeychain(card: self.viewModel.getCardList(indexPath: indexPath), aliasCard: self.viewModel.getCardList(indexPath: indexPath).alias ?? "")
         
         let dcString = String(describing: DetailsCardViewController.self)
         let vcString = UIStoryboard(name: dcString, bundle: nil).instantiateViewController(identifier: dcString) { coder -> DetailsCardViewController? in
