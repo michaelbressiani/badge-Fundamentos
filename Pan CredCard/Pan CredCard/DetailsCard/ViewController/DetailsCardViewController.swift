@@ -18,11 +18,10 @@ class DetailsCardViewController: UIViewController {
     @IBOutlet weak var credCardCodSecLabel: UILabel!
     
     var cardName: String = ""
-    var card: Card = Card(alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+    var card: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
     var viewModel: DetailsCardViewModel = DetailsCardViewModel()
     
-    init?(coder: NSCoder, cardName: String, card: Card) {
-        self.cardName = cardName
+    init?(coder: NSCoder, card: Card) {
         self.card = card
         super.init(coder: coder)
     }
@@ -39,10 +38,10 @@ class DetailsCardViewController: UIViewController {
     
     func elementsConfig() {
         credCardImageImageView.image = viewModel.convertBase64ToImage(base64String: card.image)
-        credCardNameLabel.text = cardName
+        credCardNameLabel.text = card.name
         credCardAliasLabel.text = card.alias
         credCardIsCreditLabel.text = String(card.credit)
-        credCardIsDebitLabel.text = String(card.debit ?? false)
+        credCardIsDebitLabel.text = String(card.debit)
         credCardNumberLabel.text = card.number
         credCardCodSecLabel.text = card.codSec
     }

@@ -11,16 +11,16 @@ import Security
 class SecureStorageManager {
     
     private let cardKeychainService = "PanCredCard"
-    private let cardKeychainAccount = "CredCard"
+    private let cardKeychainAccount = ""
     
-    func saveCardToKeychain(card: Card, aliasCard: String) {
+    func saveCardToKeychain(card: Card, idCard: Int) {
         do {
             let cardData = try JSONEncoder().encode(card)
             
             let query: [String: Any] = [
                 kSecClass as String: kSecClassGenericPassword,
                 kSecAttrService as String: cardKeychainService,
-                kSecAttrAccount as String: cardKeychainAccount + aliasCard,
+                kSecAttrAccount as String: cardKeychainAccount + String(idCard),
                 kSecValueData as String: cardData
             ]
             

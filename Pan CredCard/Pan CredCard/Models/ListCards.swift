@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct ListCards: Decodable {
-    let cardsList: [[String: Card]]
+
+struct ListCards: Codable {
+    let cards: [Card]
 }
 
-// MARK: - CardsList
 struct Card: Codable {
-    let alias: String?
-    let credit: Bool
-    let debit: Bool?
+    let id: Int
+    let name, alias: String
+    let credit, debit: Bool
     let number, codSec, image: String
 }

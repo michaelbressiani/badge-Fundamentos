@@ -49,11 +49,11 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
         tableView.deselectRow(at: indexPath, animated: true)
         
         
-        self.secureStorageManager.saveCardToKeychain(card: self.viewModel.getCardList(indexPath: indexPath), aliasCard: self.viewModel.getCardList(indexPath: indexPath).alias ?? "")
+        self.secureStorageManager.saveCardToKeychain(card: self.viewModel.getCardList(indexPath: indexPath), idCard: self.viewModel.getCardList(indexPath: indexPath).id)
         
         let dcString = String(describing: DetailsCardViewController.self)
         let vcString = UIStoryboard(name: dcString, bundle: nil).instantiateViewController(identifier: dcString) { coder -> DetailsCardViewController? in
-            return DetailsCardViewController(coder: coder, cardName: self.viewModel.getCardName(indexPath: indexPath), card: self.viewModel.getCardList(indexPath: indexPath) )
+            return DetailsCardViewController(coder: coder, card: self.viewModel.getCardList(indexPath: indexPath) )
         }
         
         self.navigationController?.pushViewController(vcString, animated: true)

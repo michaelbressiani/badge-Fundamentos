@@ -16,36 +16,38 @@ protocol CardsViewModelProtocol: AnyObject {
 class ListCredCardsViewModel {
     
     private var service = CardsService()
-    private var cardsList: ListCards?
+    private var cards: ListCards?
     weak var delegate: CardsViewModelProtocol?
     
     func fetchCardsAlamofire() {
         service.getCardsAlamofire { result in
             switch result {
             case .success(let success):
-                self.cardsList = success
+                self.cards = success
+                print(success)
                 self.delegate?.successRequest()
-            case .failure(_):
+            case .failure(let failure):
+                print(failure)
                 self.delegate?.errorRequest()
             }
         }
     }
     
     func numberOfRows() -> Int {
-        return cardsList?.cardsList.count ?? 0
-    }
-    
-    func getCardName(indexPath: IndexPath) -> String {
-        return cardsList?.cardsList[indexPath.row].keys.first ?? ""
+        return cards?.cards.count ?? 0
     }
     
     func getCardList(indexPath: IndexPath) -> Card {
-        return cardsList?.cardsList[indexPath.row].values.first ??
-                 Card(alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+        return cards?.cards[indexPath.row] ??
+        Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
     }
     
     func accessibilityCell(cell: UITableViewCell, indexPath: IndexPath) {
         cell.isAccessibilityElement = true
-        cell.accessibilityHint = "Cartão: \(getCardName(indexPath: indexPath))"
+        cell.accessibilityHint = "Cartão: \(getCardList(indexPath: indexPath).name)"
     }
+        
+    func convertBase64ToImage(base64String: String) -> UIImage {
+            return UIImage(data: Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) ?? Data()) ?? UIImage()
+        }
 }

@@ -15,6 +15,7 @@ class CredCardsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageCardImageView: UIImageView!
     
+    var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
     static let identifier: String = "CredCardsTableViewCell"
     
     static func nib() -> UINib {
@@ -23,23 +24,11 @@ class CredCardsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configElements()
-    }
-    
-    func configElements() {
     }
     
     func setupCell(card: Card) {
-        if let image = convertBase64ToImage(card.image) {
-            imageCardImageView.image = image
-        }
-    }
-    
-    func convertBase64ToImage(_ base64String: String) -> UIImage? {
-        if let imageData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) {
-            return UIImage(data: imageData)
-        }
-        return nil
+        let image = viewModel.convertBase64ToImage(base64String: card.image)
+        imageCardImageView.image = image
     }
 }
 
