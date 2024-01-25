@@ -8,9 +8,9 @@
 import Foundation
 import Security
 
-class SecureStorageCredCard {
+class SecureStorageCard {
     
-    func saveCredCardToKeychain(card: Card) {
+    func saveCardToKeychain(card: Card) {
         do {
             let cardData = try JSONEncoder().encode(card)
             

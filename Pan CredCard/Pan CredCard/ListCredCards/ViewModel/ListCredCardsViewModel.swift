@@ -18,6 +18,13 @@ class ListCredCardsViewModel {
     private var service = CardsService()
     private var cards: ListCards?
     weak var delegate: CardsViewModelProtocol?
+    private var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+    private var viewController: UIViewController
+    
+    
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
     
     func fetchCardsAlamofire() {
         service.getCardsAlamofire { result in
@@ -38,8 +45,7 @@ class ListCredCardsViewModel {
     }
     
     func getCardList(indexPath: IndexPath) -> Card {
-        return cards?.cards[indexPath.row] ??
-        Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+        return cards?.cards[indexPath.row] ?? cardEmpty
     }
     
     func accessibilityCell(cell: UITableViewCell, indexPath: IndexPath) {
@@ -50,4 +56,14 @@ class ListCredCardsViewModel {
     func convertBase64ToImage(base64String: String) -> UIImage {
             return UIImage(data: Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) ?? Data()) ?? UIImage()
         }
+    
+    func navegationToDetailsCard(indexPath: IndexPath) {
+        
+        let dcString = String(describing: DetailsCardViewController.self)
+        let vcString = UIStoryboard(name: dcString, bundle: nil).instantiateViewController(identifier: dcString) { coder -> DetailsCardViewController? in
+            return DetailsCardViewController(coder: coder, card: self.getCardList(indexPath: indexPath) )
+        }
+        
+        viewController.navigationController?.pushViewController(vcString, animated: true)
+    }
 }
