@@ -15,7 +15,7 @@ class CredCardsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageCardImageView: UIImageView!
     
-    var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
+    var viewModel: ListCredCardsViewModel = ListCredCardsViewModel(viewController:  UIViewController())
     static let identifier: String = "CredCardsTableViewCell"
     
     static func nib() -> UINib {
