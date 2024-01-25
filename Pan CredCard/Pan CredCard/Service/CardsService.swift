@@ -10,8 +10,6 @@ import Alamofire
 
 class CardsService {
     
-    var secureStorageManager: SecureStorageManager = SecureStorageManager()
-    
     func getCardsAlamofire(completion: @escaping (Result<ListCards, Error>) -> Void) {
         let urlString = "https://run.mocky.io/v3/32036945-5a73-4dad-b495-8349cc853026"
         AF.request(urlString, method: .get).responseDecodable(of: ListCards.self) { response in

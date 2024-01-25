@@ -8,19 +8,16 @@
 import Foundation
 import Security
 
-class SecureStorageManager {
+class SecureStorageCredCard {
     
-    private let cardKeychainService = "PanCredCard"
-    private let cardKeychainAccount = ""
-    
-    func saveCardToKeychain(card: Card, idCard: Int) {
+    func saveCredCardToKeychain(card: Card) {
         do {
             let cardData = try JSONEncoder().encode(card)
             
             let query: [String: Any] = [
                 kSecClass as String: kSecClassGenericPassword,
-                kSecAttrService as String: cardKeychainService,
-                kSecAttrAccount as String: cardKeychainAccount + String(idCard),
+                kSecAttrService as String: "Pan CredCard",
+                kSecAttrAccount as String: String(card.id),
                 kSecValueData as String: cardData
             ]
             
