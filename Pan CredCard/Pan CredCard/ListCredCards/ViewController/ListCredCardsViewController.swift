@@ -10,19 +10,17 @@ import UIKit
 class ListCredCardsViewController: UIViewController {
     
     @IBOutlet weak var listCredCardsTableView: UITableView!
-
-    var viewModel: ListCredCardsViewModel?
-    var secureStorageCard: SecureStorageCard = SecureStorageCard()
-    private var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+    
+    var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
+    var secureStorageCredCard: SecureStorageCredCard = SecureStorageCredCard()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         view.backgroundColor = UIColor.systemBackground
         navigationItem.backButtonTitle = ""
-        self.viewModel = ListCredCardsViewModel(viewController: self)
-        viewModel?.delegate = self
-        viewModel?.fetchCardsAlamofire()
+        viewModel.delegate = self
+        viewModel.fetchCardsAlamofire()
     }
     
     func configTableView() {
@@ -37,21 +35,27 @@ class ListCredCardsViewController: UIViewController {
 extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.numberOfRows() ?? 0
+        return viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CredCardsTableViewCell.identifier, for: indexPath) as? CredCardsTableViewCell
-        cell?.setupCell(card: viewModel?.getCardList(indexPath: indexPath) ?? Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: ""))
-        viewModel?.accessibilityCell(cell: cell ?? UITableViewCell(), indexPath: indexPath)
+        cell?.setupCell(card: viewModel.getCardList(indexPath: indexPath))
+        viewModel.accessibilityCell(cell: cell ?? UITableViewCell(), indexPath: indexPath)
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        secureStorageCard.saveCardToKeychain(card: viewModel?.getCardList(indexPath: indexPath) ?? cardEmpty)
-        viewModel?.navegationToDetailsCard(indexPath: indexPath)
+        self.secureStorageCredCard.saveCredCardToKeychain(card: self.viewModel.getCardList(indexPath: indexPath))
+        
+        let dcString = String(describing: DetailsCardViewController.self)
+        let vcString = UIStoryboard(name: dcString, bundle: nil).instantiateViewController(identifier: dcString) { coder -> DetailsCardViewController? in
+            return DetailsCardViewController(coder: coder, card: self.viewModel.getCardList(indexPath: indexPath) )
+        }
+        
+        self.navigationController?.pushViewController(vcString, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF2EDA352B5F40DD004AF676 /* SecureStorageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2EDA342B5F40DD004AF676 /* SecureStorageCard.swift */; };
+		DF2EDA352B5F40DD004AF676 /* SecureStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2EDA342B5F40DD004AF676 /* SecureStorageManager.swift */; };
 		DF3493922B5C53A0004BFD68 /* DetailsCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3493912B5C53A0004BFD68 /* DetailsCardViewController.swift */; };
 		DF3493982B5C65C8004BFD68 /* DetailsCardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3493972B5C65C8004BFD68 /* DetailsCardViewController.storyboard */; };
 		DF4AE4462B5C2C8E00C7D7C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DF2EDA342B5F40DD004AF676 /* SecureStorageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageCard.swift; sourceTree = "<group>"; };
+		DF2EDA342B5F40DD004AF676 /* SecureStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageManager.swift; sourceTree = "<group>"; };
 		DF3493912B5C53A0004BFD68 /* DetailsCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardViewController.swift; sourceTree = "<group>"; };
 		DF3493972B5C65C8004BFD68 /* DetailsCardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsCardViewController.storyboard; sourceTree = "<group>"; };
 		DF4AE4422B5C2C8E00C7D7C0 /* Pan CredCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pan CredCard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				DF4AE4752B5C45AB00C7D7C0 /* CardsService.swift */,
-				DF2EDA342B5F40DD004AF676 /* SecureStorageCard.swift */,
+				DF2EDA342B5F40DD004AF676 /* SecureStorageManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -282,7 +282,7 @@
 				DF4AE4462B5C2C8E00C7D7C0 /* AppDelegate.swift in Sources */,
 				DF4AE4642B5C3A3000C7D7C0 /* CredCardsTableViewCell.swift in Sources */,
 				DF706F2F2B5E7FD100782671 /* DetailsCardViewModel.swift in Sources */,
-				DF2EDA352B5F40DD004AF676 /* SecureStorageCard.swift in Sources */,
+				DF2EDA352B5F40DD004AF676 /* SecureStorageManager.swift in Sources */,
 				DF3493922B5C53A0004BFD68 /* DetailsCardViewController.swift in Sources */,
 				DF4AE4482B5C2C8E00C7D7C0 /* SceneDelegate.swift in Sources */,
 			);
