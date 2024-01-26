@@ -5,7 +5,6 @@
 //  Created by Michael Bressiani on 20/01/24.
 //
 
-import Foundation
 import UIKit
 
 protocol CardsViewModelProtocol: AnyObject {
@@ -26,7 +25,7 @@ class ListCredCardsViewModel {
         self.viewController = viewController
     }
     
-    func fetchCardsAlamofire() {
+    public func fetchCardsAlamofire() {
         service.getCardsAlamofire { result in
             switch result {
             case .success(let success):
@@ -40,24 +39,24 @@ class ListCredCardsViewModel {
         }
     }
     
-    func numberOfRows() -> Int {
+    public func numberOfRows() -> Int {
         return cards?.cards.count ?? 0
     }
     
-    func getCardList(indexPath: IndexPath) -> Card {
+    public func getCardList(indexPath: IndexPath) -> Card {
         return cards?.cards[indexPath.row] ?? cardEmpty
     }
     
-    func accessibilityCell(cell: UITableViewCell, indexPath: IndexPath) {
+    public func accessibilityCell(cell: UITableViewCell, indexPath: IndexPath) {
         cell.isAccessibilityElement = true
         cell.accessibilityHint = "Cartão: \(getCardList(indexPath: indexPath).name)"
     }
         
-    func convertBase64ToImage(base64String: String) -> UIImage {
+    public func convertBase64ToImage(base64String: String) -> UIImage {
             return UIImage(data: Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) ?? Data()) ?? UIImage()
         }
     
-    func navegationToDetailsCard(indexPath: IndexPath) {
+    public func navegationToDetailsCard(indexPath: IndexPath) {
         
         let dcString = String(describing: DetailsCardViewController.self)
         let vcString = UIStoryboard(name: dcString, bundle: nil).instantiateViewController(identifier: dcString) { coder -> DetailsCardViewController? in

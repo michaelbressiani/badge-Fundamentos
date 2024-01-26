@@ -26,7 +26,7 @@ class CredCardsTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupCell(card: Card) {
+    public func setupCell(card: Card) {
         let image = viewModel.convertBase64ToImage(base64String: card.image)
         imageCardImageView.image = image
     }

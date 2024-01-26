@@ -11,8 +11,8 @@ class ListCredCardsViewController: UIViewController {
     
     @IBOutlet weak var listCredCardsTableView: UITableView!
 
-    var viewModel: ListCredCardsViewModel?
-    var secureStorageCard: SecureStorageCard = SecureStorageCard()
+    private var viewModel: ListCredCardsViewModel?
+    private var secureStorageCard: SecureStorageCard = SecureStorageCard()
     private var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class ListCredCardsViewController: UIViewController {
         viewModel?.fetchCardsAlamofire()
     }
     
-    func configTableView() {
+    private func configTableView() {
         listCredCardsTableView.separatorStyle = .none
         listCredCardsTableView.delegate = self
         listCredCardsTableView.dataSource = self
@@ -42,7 +42,7 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CredCardsTableViewCell.identifier, for: indexPath) as? CredCardsTableViewCell
-        cell?.setupCell(card: viewModel?.getCardList(indexPath: indexPath) ?? Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: ""))
+        cell?.setupCell(card: viewModel?.getCardList(indexPath: indexPath) ?? cardEmpty)
         viewModel?.accessibilityCell(cell: cell ?? UITableViewCell(), indexPath: indexPath)
         return cell ?? UITableViewCell()
     }

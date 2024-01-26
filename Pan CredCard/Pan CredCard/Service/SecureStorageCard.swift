@@ -10,7 +10,7 @@ import Security
 
 class SecureStorageCard {
     
-    func saveCardToKeychain(card: Card) {
+    public func saveCardToKeychain(card: Card) {
         do {
             let cardData = try JSONEncoder().encode(card)
             

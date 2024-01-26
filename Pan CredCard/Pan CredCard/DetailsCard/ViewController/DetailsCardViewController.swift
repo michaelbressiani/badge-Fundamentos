@@ -22,9 +22,9 @@ class DetailsCardViewController: UIViewController {
     @IBOutlet weak var titleCardIsCreditOrIsDebitLabel: UILabel!
     @IBOutlet weak var cardIsCreditOrIsDebitLabel: UILabel!
     
-    var cardName: String = ""
-    var card: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
-    var viewModel: DetailsCardViewModel = DetailsCardViewModel()
+    private var cardName: String = ""
+    private var card: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+    private var viewModel: DetailsCardViewModel = DetailsCardViewModel()
     
     init?(coder: NSCoder, card: Card) {
         self.card = card
@@ -41,38 +41,43 @@ class DetailsCardViewController: UIViewController {
         accessebilityLabels()
     }
     
-    func elementsConfig() {
+    private func elementsConfig() {
         
         cardImageImageView.image = viewModel.convertBase64ToImage(base64String: card.image)
         
-        titleConfig(titleCardNameLabel, "Cartão")
-        config(cardNameLabel, card.name)
+        let titleCardNameString = "Cartão"
+        let cardNameString = card.name
+        labelConfig(titleCardNameLabel, cardNameLabel, titleCardNameString, cardNameString)
         
-        titleConfig(titleCardAliasLabel, "Cartão")
-        config(cardAliasLabel, card.alias)
+        let titleCardAliasString = "Bandeira"
+        let cardAliasString = card.alias
+        labelConfig(titleCardAliasLabel, cardAliasLabel, titleCardAliasString, cardAliasString)
         
-        titleConfig(titleCardIsCreditOrIsDebitLabel, "Função")
-        config(cardIsCreditOrIsDebitLabel, viewModel.isDebitOrCredit(isDebit: card.credit, isCredit: card.debit))
-    
-        titleConfig(titleCardNumberLabel, "Número do cartão")
-        config(cardNumberLabel, card.number)
+        let titleCardNumberString = "Número do cartão"
+        let cardNumberString = card.number
+        labelConfig(titleCardNumberLabel, cardNumberLabel, titleCardNumberString, cardNumberString)
         
-        titleConfig(titleCardCodSecLabel, "Código de segurança")
-        config(cardCodSecLabel, card.codSec)
+        let titleCardCodSecString = "Código de segurança"
+        let cardCodSecString = card.codSec
+        labelConfig(titleCardCodSecLabel, cardCodSecLabel, titleCardCodSecString, cardCodSecString)
+        
+        let titleCardIsCreditOrIsDebitString = "Função"
+        let cardIsCreditOrIsDebitString = viewModel.isDebitOrCredit(isDebit: card.credit, isCredit: card.debit)
+        labelConfig(titleCardIsCreditOrIsDebitLabel, cardIsCreditOrIsDebitLabel, titleCardIsCreditOrIsDebitString, cardIsCreditOrIsDebitString)
+        
     }
     
-    func titleConfig(_ label: UILabel, _ textLabel: String) {
-        label.text = textLabel
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = UIColor.lightGray
-    }
-    
-    func config(_ label: UILabel, _ textLabel: String) {
+    private func labelConfig(_ titleLabel: UILabel,_ label: UILabel, _ textTitleLabel: String,_ textLabel: String) {
+        titleLabel.text = textTitleLabel
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        titleLabel.textColor = UIColor.lightGray
+        
         label.text = textLabel
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
-    func accessebilityLabels() {
+    private func accessebilityLabels() {
+        
         viewModel.accessibilityLabel(label: titleCardNameLabel)
         viewModel.accessibilityLabel(label: cardNameLabel)
         

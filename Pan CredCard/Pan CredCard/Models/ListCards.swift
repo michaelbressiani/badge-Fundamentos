@@ -5,9 +5,6 @@
 //  Created by Michael Bressiani on 20/01/24.
 //
 
-import Foundation
-
-
 struct ListCards: Codable {
     let cards: [Card]
 }
