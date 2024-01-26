@@ -9,13 +9,18 @@ import UIKit
 
 class DetailsCardViewController: UIViewController {
     
-    @IBOutlet weak var credCardImageImageView: UIImageView!
-    @IBOutlet weak var credCardNameLabel: UILabel!
-    @IBOutlet weak var credCardAliasLabel: UILabel!
-    @IBOutlet weak var credCardIsCreditLabel: UILabel!
-    @IBOutlet weak var credCardIsDebitLabel: UILabel!
-    @IBOutlet weak var credCardNumberLabel: UILabel!
-    @IBOutlet weak var credCardCodSecLabel: UILabel!
+    @IBOutlet weak var cardImageImageView: UIImageView!
+    @IBOutlet weak var titleCardNameLabel: UILabel!
+    @IBOutlet weak var cardNameLabel: UILabel!
+    @IBOutlet weak var titleCardAliasLabel: UILabel!
+    @IBOutlet weak var cardAliasLabel: UILabel!
+    @IBOutlet weak var titleCardNumberLabel: UILabel!
+    @IBOutlet weak var cardNumberLabel: UILabel!
+    @IBOutlet weak var titleCardCodSecLabel: UILabel!
+    @IBOutlet weak var cardCodSecLabel: UILabel!
+    
+    @IBOutlet weak var titleCardIsCreditOrIsDebitLabel: UILabel!
+    @IBOutlet weak var cardIsCreditOrIsDebitLabel: UILabel!
     
     var cardName: String = ""
     var card: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
@@ -37,20 +42,50 @@ class DetailsCardViewController: UIViewController {
     }
     
     func elementsConfig() {
-        credCardImageImageView.image = viewModel.convertBase64ToImage(base64String: card.image)
-        credCardNameLabel.text = card.name
-        credCardAliasLabel.text = card.alias
-        credCardIsCreditLabel.text = String(card.credit)
-        credCardIsDebitLabel.text = String(card.debit)
-        credCardNumberLabel.text = card.number
-        credCardCodSecLabel.text = card.codSec
+        
+        cardImageImageView.image = viewModel.convertBase64ToImage(base64String: card.image)
+        
+        titleConfig(titleCardNameLabel, "Cartão")
+        config(cardNameLabel, card.name)
+        
+        titleConfig(titleCardAliasLabel, "Cartão")
+        config(cardAliasLabel, card.alias)
+        
+        titleConfig(titleCardIsCreditOrIsDebitLabel, "Função")
+        config(cardIsCreditOrIsDebitLabel, viewModel.isDebitOrCredit(isDebit: card.credit, isCredit: card.debit))
+    
+        titleConfig(titleCardNumberLabel, "Número do cartão")
+        config(cardNumberLabel, card.number)
+        
+        titleConfig(titleCardCodSecLabel, "Código de segurança")
+        config(cardCodSecLabel, card.codSec)
+    }
+    
+    func titleConfig(_ label: UILabel, _ textLabel: String) {
+        label.text = textLabel
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = UIColor.lightGray
+    }
+    
+    func config(_ label: UILabel, _ textLabel: String) {
+        label.text = textLabel
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
     func accessebilityLabels() {
-        viewModel.accessibilityLabel(label: credCardNameLabel)
-        viewModel.accessibilityLabel(label: credCardAliasLabel)
-        viewModel.accessibilityLabel(label: credCardIsCreditLabel)
-        viewModel.accessibilityLabel(label: credCardIsDebitLabel)
-        viewModel.accessibilityLabel(label: credCardCodSecLabel)
+        viewModel.accessibilityLabel(label: titleCardNameLabel)
+        viewModel.accessibilityLabel(label: cardNameLabel)
+        
+        viewModel.accessibilityLabel(label: titleCardAliasLabel)
+        viewModel.accessibilityLabel(label: titleCardAliasLabel)
+        
+        viewModel.accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel)
+        viewModel.accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel)
+        
+        viewModel.accessibilityLabel(label: titleCardNumberLabel)
+        viewModel.accessibilityLabel(label: titleCardNumberLabel)
+        
+        viewModel.accessibilityLabel(label: titleCardCodSecLabel)
+        viewModel.accessibilityLabel(label: titleCardCodSecLabel)
     }
 }
