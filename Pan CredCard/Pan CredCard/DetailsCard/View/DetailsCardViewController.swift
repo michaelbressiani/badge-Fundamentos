@@ -76,21 +76,26 @@ class DetailsCardViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
+    private func accessibilityLabel(label: UILabel) {
+        label.isAccessibilityElement = true
+        label.accessibilityHint = label.text
+    }
+    
     private func accessebilityLabels() {
         
-        viewModel.accessibilityLabel(label: titleCardNameLabel)
-        viewModel.accessibilityLabel(label: cardNameLabel)
+        accessibilityLabel(label: titleCardNameLabel)
+        accessibilityLabel(label: cardNameLabel)
         
-        viewModel.accessibilityLabel(label: titleCardAliasLabel)
-        viewModel.accessibilityLabel(label: titleCardAliasLabel)
+        accessibilityLabel(label: titleCardAliasLabel)
+        accessibilityLabel(label: titleCardAliasLabel)
         
-        viewModel.accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel)
-        viewModel.accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel)
+        accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel)
+        accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel)
         
-        viewModel.accessibilityLabel(label: titleCardNumberLabel)
-        viewModel.accessibilityLabel(label: titleCardNumberLabel)
+        accessibilityLabel(label: titleCardNumberLabel)
+        accessibilityLabel(label: titleCardNumberLabel)
         
-        viewModel.accessibilityLabel(label: titleCardCodSecLabel)
-        viewModel.accessibilityLabel(label: titleCardCodSecLabel)
+        accessibilityLabel(label: titleCardCodSecLabel)
+        accessibilityLabel(label: titleCardCodSecLabel)
     }
 }

@@ -30,10 +30,8 @@ class ListCredCardsViewModel {
             switch result {
             case .success(let success):
                 self.cards = success
-                print(success)
                 self.delegate?.successRequest()
-            case .failure(let failure):
-                print(failure)
+            case .failure(_):
                 self.delegate?.errorRequest()
             }
         }

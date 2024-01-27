@@ -24,9 +24,4 @@ class DetailsCardViewModel {
     public func convertBase64ToImage(base64String: String) -> UIImage {
         return UIImage(data: Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) ?? Data()) ?? UIImage()
     }
-    
-    public func accessibilityLabel(label: UILabel) {
-        label.isAccessibilityElement = true
-        label.accessibilityHint = label.text
-    }
 }
