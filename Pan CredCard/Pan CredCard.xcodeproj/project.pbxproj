@@ -66,7 +66,7 @@
 		DF3493902B5C537C004BFD68 /* DetailsCard */ = {
 			isa = PBXGroup;
 			children = (
-				DF706F2D2B5E7FAF00782671 /* ViewController */,
+				DF706F2D2B5E7FAF00782671 /* View */,
 				DF706F2C2B5E7F9C00782671 /* ViewModel */,
 			);
 			path = DetailsCard;
@@ -91,10 +91,10 @@
 		DF4AE4442B5C2C8E00C7D7C0 /* Pan CredCard */ = {
 			isa = PBXGroup;
 			children = (
-				DF3493902B5C537C004BFD68 /* DetailsCard */,
 				DF4AE4742B5C457300C7D7C0 /* Service */,
 				DF4AE46E2B5C446C00C7D7C0 /* Mock */,
 				DF4AE46B2B5C43CD00C7D7C0 /* Models */,
+				DF3493902B5C537C004BFD68 /* DetailsCard */,
 				DF4AE45D2B5C2FA600C7D7C0 /* ListCredCards */,
 				DF4AE4592B5C2D0C00C7D7C0 /* SplashScreen */,
 				DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */,
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				DF4AE4682B5C3C9200C7D7C0 /* ViewModel */,
-				DF4AE4672B5C3A6A00C7D7C0 /* ViewController */,
+				DF4AE4672B5C3A6A00C7D7C0 /* View */,
 				DF4AE4662B5C3A5100C7D7C0 /* Cell */,
 			);
 			path = ListCredCards;
@@ -134,13 +134,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		DF4AE4672B5C3A6A00C7D7C0 /* ViewController */ = {
+		DF4AE4672B5C3A6A00C7D7C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				DF4AE45E2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift */,
 				DF4AE4602B5C2FD900C7D7C0 /* ListCredCardsViewController.storyboard */,
 			);
-			path = ViewController;
+			path = View;
 			sourceTree = "<group>";
 		};
 		DF4AE4682B5C3C9200C7D7C0 /* ViewModel */ = {
@@ -184,13 +184,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		DF706F2D2B5E7FAF00782671 /* ViewController */ = {
+		DF706F2D2B5E7FAF00782671 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				DF3493912B5C53A0004BFD68 /* DetailsCardViewController.swift */,
 				DF3493972B5C65C8004BFD68 /* DetailsCardViewController.storyboard */,
 			);
-			path = ViewController;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
