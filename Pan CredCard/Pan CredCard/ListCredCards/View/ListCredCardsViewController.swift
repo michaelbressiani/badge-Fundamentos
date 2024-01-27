@@ -17,12 +17,16 @@ class ListCredCardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
-        view.backgroundColor = UIColor.systemBackground
-        navigationItem.backButtonTitle = ""
+        initialConfigs()
         self.viewModel = ListCredCardsViewModel(viewController: self)
         viewModel?.delegate = self
         viewModel?.fetchCardsAlamofire()
+    }
+    
+    private func initialConfigs() {
+        self.navigationItem.hidesBackButton = true
+        view.backgroundColor = UIColor.systemBackground
+        navigationItem.backButtonTitle = ""
     }
     
     private func configTableView() {

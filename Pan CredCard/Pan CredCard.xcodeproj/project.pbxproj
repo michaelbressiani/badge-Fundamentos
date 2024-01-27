@@ -25,6 +25,7 @@
 		DF4AE4702B5C449600C7D7C0 /* Cards.json in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE46F2B5C449600C7D7C0 /* Cards.json */; };
 		DF4AE4732B5C451B00C7D7C0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DF4AE4722B5C451B00C7D7C0 /* Alamofire */; };
 		DF4AE4762B5C45AB00C7D7C0 /* CardsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4752B5C45AB00C7D7C0 /* CardsService.swift */; };
+		DF531E9A2B657F0A00A7897E /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF531E992B657F0A00A7897E /* SplashScreenViewModel.swift */; };
 		DF706F2F2B5E7FD100782671 /* DetailsCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF706F2E2B5E7FD100782671 /* DetailsCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		DF4AE46C2B5C43DB00C7D7C0 /* ListCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCards.swift; sourceTree = "<group>"; };
 		DF4AE46F2B5C449600C7D7C0 /* Cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cards.json; sourceTree = "<group>"; };
 		DF4AE4752B5C45AB00C7D7C0 /* CardsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsService.swift; sourceTree = "<group>"; };
+		DF531E992B657F0A00A7897E /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		DF706F2E2B5E7FD100782671 /* DetailsCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +111,8 @@
 		DF4AE4592B5C2D0C00C7D7C0 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				DF4AE4492B5C2C8E00C7D7C0 /* SplashScreenViewController.swift */,
-				DF4AE44B2B5C2C8E00C7D7C0 /* Main.storyboard */,
+				DF531E9C2B65806000A7897E /* ViewModel */,
+				DF531E9B2B65805300A7897E /* View */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -174,6 +176,23 @@
 				DF2EDA342B5F40DD004AF676 /* SecureStorageCard.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		DF531E9B2B65805300A7897E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF4AE4492B5C2C8E00C7D7C0 /* SplashScreenViewController.swift */,
+				DF4AE44B2B5C2C8E00C7D7C0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF531E9C2B65806000A7897E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF531E992B657F0A00A7897E /* SplashScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DF706F2C2B5E7F9C00782671 /* ViewModel */ = {
@@ -279,6 +298,7 @@
 				DF4AE44A2B5C2C8E00C7D7C0 /* SplashScreenViewController.swift in Sources */,
 				DF4AE4762B5C45AB00C7D7C0 /* CardsService.swift in Sources */,
 				DF4AE46D2B5C43DB00C7D7C0 /* ListCards.swift in Sources */,
+				DF531E9A2B657F0A00A7897E /* SplashScreenViewModel.swift in Sources */,
 				DF4AE4462B5C2C8E00C7D7C0 /* AppDelegate.swift in Sources */,
 				DF4AE4642B5C3A3000C7D7C0 /* CredCardsTableViewCell.swift in Sources */,
 				DF706F2F2B5E7FD100782671 /* DetailsCardViewModel.swift in Sources */,
