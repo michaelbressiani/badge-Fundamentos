@@ -22,6 +22,13 @@ class DetailsCardViewModel {
     }
     
     public func convertBase64ToImage(base64String: String) -> UIImage {
-        return UIImage(data: Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) ?? Data()) ?? UIImage()
+        if let data = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) {
+            if let image = UIImage(data: data) {
+                return image
+            }
+        }
+        return UIImage()
+//        
+//        return UIImage(data: Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) ?? Data()) ?? UIImage()
     }
 }
