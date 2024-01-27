@@ -32,6 +32,19 @@ class ListCredCardsViewController: UIViewController {
         listCredCardsTableView.register(CredCardsTableViewCell.nib(), forCellReuseIdentifier: CredCardsTableViewCell.identifier)
         listCredCardsTableView.reloadData()
     }
+    
+    private func errorRequestAPI() {
+        
+        let alert: UIAlertController  = UIAlertController(title: "Fora de serviço", message: "", preferredStyle: .alert)
+        
+        let action: UIAlertAction = UIAlertAction(title: "Sair", style: .default) {
+            (action) in exit(0)
+        }
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -61,6 +74,7 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension ListCredCardsViewController: CardsViewModelProtocol {
     func errorRequest() {
+        errorRequestAPI()
     }
     
     func successRequest() {
