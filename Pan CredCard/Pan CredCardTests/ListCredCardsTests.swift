@@ -90,6 +90,12 @@ final class ListCredCardsTests: XCTestCase {
         XCTAssertTrue(imageNotNilTest.size.height > 0)
     }
     
+    func testLastForDigits() throws {
+        let cardNumberTest = "5555 0000 1111 1234"
+        let lastForDigitsTest = listCredCardsViewModel.lastForDigits(cardNumber: cardNumberTest)
+        XCTAssertEqual(lastForDigitsTest, "1234")
+    }
+    
     func testNavegationToDetailsCard() throws {
             
         let card = Card(id: 1, name: "Test1", alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
