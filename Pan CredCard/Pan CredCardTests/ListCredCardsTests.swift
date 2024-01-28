@@ -61,7 +61,6 @@ final class ListCredCardsTests: XCTestCase {
     
     func testAccessibilityCell() throws {
     
-            let tableView = UITableView()
             let indexPath = IndexPath(row: 0, section: 0)
             let cell = UITableViewCell()
 
