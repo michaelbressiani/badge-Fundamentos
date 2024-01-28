@@ -15,10 +15,10 @@ protocol CardsViewModelProtocol: AnyObject {
 class ListCredCardsViewModel {
     
     private var service = CardsService()
-    private var cards: ListCards?
+    public var cards: ListCards?
     weak var delegate: CardsViewModelProtocol?
-    private var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
-    private var viewController: UIViewController
+    public var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+    public var viewController: UIViewController
     
     
     init(viewController: UIViewController) {
@@ -51,8 +51,13 @@ class ListCredCardsViewModel {
     }
         
     public func convertBase64ToImage(base64String: String) -> UIImage {
-            return UIImage(data: Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) ?? Data()) ?? UIImage()
+        if let data = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) {
+            if let image = UIImage(data: data) {
+                return image
+            }
         }
+        return UIImage()
+    }
     
     public func navegationToDetailsCard(indexPath: IndexPath) {
         

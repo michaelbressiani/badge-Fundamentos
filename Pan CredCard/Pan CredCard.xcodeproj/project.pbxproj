@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1BF1052B665DF3004436DD /* ListCredCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1BF1042B665DF3004436DD /* ListCredCardsTests.swift */; };
+		DF1BF1082B667087004436DD /* ImageString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1BF1072B667087004436DD /* ImageString.swift */; };
 		DF1BF6142B65A77C00C38CB5 /* Pan_CredCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1BF6132B65A77C00C38CB5 /* Pan_CredCardTests.swift */; };
 		DF1BF61B2B65A81700C38CB5 /* DetailsCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1BF61A2B65A81700C38CB5 /* DetailsCardTests.swift */; };
 		DF2EDA352B5F40DD004AF676 /* SecureStorageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2EDA342B5F40DD004AF676 /* SecureStorageCard.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF1BF1042B665DF3004436DD /* ListCredCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCredCardsTests.swift; sourceTree = "<group>"; };
+		DF1BF1072B667087004436DD /* ImageString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageString.swift; sourceTree = "<group>"; };
 		DF1BF6112B65A77C00C38CB5 /* Pan CredCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pan CredCardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1BF6132B65A77C00C38CB5 /* Pan_CredCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pan_CredCardTests.swift; sourceTree = "<group>"; };
 		DF1BF61A2B65A81700C38CB5 /* DetailsCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardTests.swift; sourceTree = SOURCE_ROOT; };
@@ -87,11 +91,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF1BF1062B66706F004436DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF1BF1072B667087004436DD /* ImageString.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		DF1BF6122B65A77C00C38CB5 /* Pan CredCardTests */ = {
 			isa = PBXGroup;
 			children = (
 				DF1BF6132B65A77C00C38CB5 /* Pan_CredCardTests.swift */,
 				DF1BF61A2B65A81700C38CB5 /* DetailsCardTests.swift */,
+				DF1BF1042B665DF3004436DD /* ListCredCardsTests.swift */,
 			);
 			path = "Pan CredCardTests";
 			sourceTree = "<group>";
@@ -126,6 +139,7 @@
 		DF4AE4442B5C2C8E00C7D7C0 /* Pan CredCard */ = {
 			isa = PBXGroup;
 			children = (
+				DF1BF1062B66706F004436DD /* Utils */,
 				DF4AE4742B5C457300C7D7C0 /* Service */,
 				DF4AE46E2B5C446C00C7D7C0 /* Mock */,
 				DF4AE46B2B5C43CD00C7D7C0 /* Models */,
@@ -358,6 +372,7 @@
 			files = (
 				DF1BF61B2B65A81700C38CB5 /* DetailsCardTests.swift in Sources */,
 				DF1BF6142B65A77C00C38CB5 /* Pan_CredCardTests.swift in Sources */,
+				DF1BF1052B665DF3004436DD /* ListCredCardsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1BF1082B667087004436DD /* ImageString.swift in Sources */,
 				DF4AE46A2B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift in Sources */,
 				DF4AE45F2B5C2FD100C7D7C0 /* ListCredCardsViewController.swift in Sources */,
 				DF4AE44A2B5C2C8E00C7D7C0 /* SplashScreenViewController.swift in Sources */,

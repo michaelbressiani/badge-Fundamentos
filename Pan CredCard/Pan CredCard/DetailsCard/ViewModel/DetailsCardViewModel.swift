@@ -28,7 +28,5 @@ class DetailsCardViewModel {
             }
         }
         return UIImage()
-//        
-//        return UIImage(data: Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) ?? Data()) ?? UIImage()
     }
 }
