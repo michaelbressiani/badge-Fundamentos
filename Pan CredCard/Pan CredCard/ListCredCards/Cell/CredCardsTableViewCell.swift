@@ -14,6 +14,12 @@ protocol convertBase64ToImage {
 class CredCardsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageCardImageView: UIImageView!
+    @IBOutlet weak var titleCardNameLabel: UILabel!
+    @IBOutlet weak var cardNameLabel: UILabel!
+    @IBOutlet weak var titleCardAliasLabel: UILabel!
+    @IBOutlet weak var cardAliasLabel: UILabel!
+    @IBOutlet weak var titleCardNumberLabel: UILabel!
+    @IBOutlet weak var cardNumberLabel: UILabel!
     
     var viewModel: ListCredCardsViewModel = ListCredCardsViewModel(viewController:  UIViewController())
     static let identifier: String = "CredCardsTableViewCell"
@@ -24,11 +30,37 @@ class CredCardsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        elementsConfig()
+    }
+    
+    func elementsConfig() {
+
+        titleCardNameLabel.text = "Cartão"
+        titleCardNameLabel.font = UIFont.systemFont(ofSize: 11)
+        titleCardNameLabel.textColor = UIColor.gray
+        
+        titleCardAliasLabel.text = "Bandeira"
+        titleCardAliasLabel.font = UIFont.systemFont(ofSize: 11)
+        titleCardAliasLabel.textColor = UIColor.gray
+        
+        titleCardNumberLabel.text = "Final do cartão"
+        titleCardNumberLabel.font = UIFont.systemFont(ofSize: 11)
+        titleCardNumberLabel.textColor = UIColor.gray
     }
     
     public func setupCell(card: Card) {
+        
         let image = viewModel.convertBase64ToImage(base64String: card.image)
         imageCardImageView.image = image
+        
+        cardNameLabel.text = card.name
+        cardNameLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        
+        cardAliasLabel.text = card.alias
+        cardAliasLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        
+        cardNumberLabel.text = viewModel.lastForDigits(cardNumber: card.number)
+        cardNumberLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
     }
 }
 

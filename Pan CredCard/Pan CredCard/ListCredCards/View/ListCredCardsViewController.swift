@@ -11,9 +11,9 @@ class ListCredCardsViewController: UIViewController {
     
     @IBOutlet weak var listCredCardsTableView: UITableView!
 
-    private var viewModel: ListCredCardsViewModel?
-    private var secureStorageCard: SecureStorageCard = SecureStorageCard()
-    private var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+    public var viewModel: ListCredCardsViewModel?
+    public var secureStorageCard: SecureStorageCard = SecureStorageCard()
+    public var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,13 @@ class ListCredCardsViewController: UIViewController {
         viewModel?.fetchCardsAlamofire()
     }
     
-    private func initialConfigs() {
+    public func initialConfigs() {
         self.navigationItem.hidesBackButton = true
         view.backgroundColor = UIColor.systemBackground
         navigationItem.backButtonTitle = ""
     }
     
-    private func configTableView() {
+    public func configTableView() {
         listCredCardsTableView.separatorStyle = .none
         listCredCardsTableView.delegate = self
         listCredCardsTableView.dataSource = self
@@ -37,7 +37,7 @@ class ListCredCardsViewController: UIViewController {
         listCredCardsTableView.reloadData()
     }
     
-    private func errorRequestAPI() {
+    public func errorRequestAPI() {
         
         let alert: UIAlertController  = UIAlertController(title: "Fora de serviço", message: "", preferredStyle: .alert)
         
@@ -59,8 +59,10 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CredCardsTableViewCell.identifier, for: indexPath) as? CredCardsTableViewCell
+        
         cell?.setupCell(card: viewModel?.getCardList(indexPath: indexPath) ?? cardEmpty)
         viewModel?.accessibilityCell(cell: cell ?? UITableViewCell(), indexPath: indexPath)
+        
         return cell ?? UITableViewCell()
     }
     

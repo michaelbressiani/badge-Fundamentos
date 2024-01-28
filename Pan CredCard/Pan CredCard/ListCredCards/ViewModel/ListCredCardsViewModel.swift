@@ -59,6 +59,10 @@ class ListCredCardsViewModel {
         return UIImage()
     }
     
+    public func lastForDigits(cardNumber: String) -> String {
+        return String(cardNumber.suffix(4))
+    }
+    
     public func navegationToDetailsCard(indexPath: IndexPath) {
         
         let dcString = String(describing: DetailsCardViewController.self)

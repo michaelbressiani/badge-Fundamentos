@@ -22,9 +22,9 @@ class DetailsCardViewController: UIViewController {
     @IBOutlet weak var titleCardIsCreditOrIsDebitLabel: UILabel!
     @IBOutlet weak var cardIsCreditOrIsDebitLabel: UILabel!
     
-    private var cardName: String = ""
-    private var card: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
-    private var viewModel: DetailsCardViewModel = DetailsCardViewModel()
+    public var cardName: String = ""
+    public var card: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
+    public var viewModel: DetailsCardViewModel = DetailsCardViewModel()
     
     init?(coder: NSCoder, card: Card) {
         self.card = card
@@ -41,7 +41,7 @@ class DetailsCardViewController: UIViewController {
         accessebilityLabels()
     }
     
-    private func elementsConfig() {
+    public func elementsConfig() {
         
         cardImageImageView.image = viewModel.convertBase64ToImage(base64String: card.image)
         
@@ -67,7 +67,7 @@ class DetailsCardViewController: UIViewController {
         
     }
     
-    private func labelConfig(_ titleLabel: UILabel,_ label: UILabel, _ textTitleLabel: String,_ textLabel: String) {
+    public func labelConfig(_ titleLabel: UILabel,_ label: UILabel, _ textTitleLabel: String,_ textLabel: String) {
         titleLabel.text = textTitleLabel
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         titleLabel.textColor = UIColor.lightGray
@@ -76,12 +76,12 @@ class DetailsCardViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
-    private func accessibilityLabel(label: UILabel) {
+    public func accessibilityLabel(label: UILabel) {
         label.isAccessibilityElement = true
         label.accessibilityHint = label.text
     }
     
-    private func accessebilityLabels() {
+    public func accessebilityLabels() {
         
         accessibilityLabel(label: titleCardNameLabel)
         accessibilityLabel(label: cardNameLabel)
