@@ -3,7 +3,6 @@
 //  Pan CredCard
 //
 //  Created by Michael Bressiani on 20/01/24.
-//
 
 import UIKit
 
@@ -18,12 +17,6 @@ class ListCredCardsViewModel {
     public var cards: ListCards?
     weak var delegate: CardsViewModelProtocol?
     public var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
-    public var viewController: UIViewController
-    
-    
-    init(viewController: UIViewController) {
-        self.viewController = viewController
-    }
     
     public func fetchCardsAlamofire() {
         service.getCardsAlamofire { result in
@@ -61,15 +54,5 @@ class ListCredCardsViewModel {
     
     public func lastForDigits(cardNumber: String) -> String {
         return String(cardNumber.suffix(4))
-    }
-    
-    public func navegationToDetailsCard(indexPath: IndexPath) {
-        
-        let dcString = String(describing: DetailsCardViewController.self)
-        let vcString = UIStoryboard(name: dcString, bundle: nil).instantiateViewController(identifier: dcString) { coder -> DetailsCardViewController? in
-            return DetailsCardViewController(coder: coder, card: self.getCardList(indexPath: indexPath) )
-        }
-        
-        viewController.navigationController?.pushViewController(vcString, animated: true)
     }
 }
