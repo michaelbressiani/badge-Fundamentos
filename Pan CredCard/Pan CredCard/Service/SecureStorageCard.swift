@@ -12,25 +12,25 @@ class SecureStorageCard {
     
     public func saveCardToKeychain(card: Card) {
         do {
-            let cardData = try JSONEncoder().encode(card)
+            let encodedCard = try JSONEncoder().encode(card)
             
-            let query: [String: Any] = [
+            let keychainQuery: [String: Any] = [
                 kSecClass as String: kSecClassGenericPassword,
                 kSecAttrService as String: "Pan CredCard",
                 kSecAttrAccount as String: String(card.id),
-                kSecValueData as String: cardData
+                kSecValueData as String: encodedCard
             ]
             
-            let status = SecItemAdd(query as CFDictionary, nil)
+            let status = SecItemAdd(keychainQuery as CFDictionary, nil)
             
             if status == errSecSuccess {
                 print("Armazenamento do cartão no Keychain realizado com sucesso.")
             } else if status == errSecDuplicateItem {
                 let updateQuery: [String: Any] = [
-                    kSecValueData as String: cardData
+                    kSecValueData as String: encodedCard
                 ]
                 
-                let updateStatus = SecItemUpdate(query as CFDictionary, updateQuery as CFDictionary)
+                let updateStatus = SecItemUpdate(keychainQuery as CFDictionary, updateQuery as CFDictionary)
                 
                 if updateStatus == errSecSuccess {
                     print("Sucesso na atualização do cartão no Keychain.")

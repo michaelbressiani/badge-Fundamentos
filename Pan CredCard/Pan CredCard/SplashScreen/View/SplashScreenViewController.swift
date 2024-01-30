@@ -25,7 +25,7 @@ class SplashScreenViewController: UIViewController {
         titleAppLabel.textColor = .white
         titleAppLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
         view.backgroundColor = UIColor(red: 0/255.0, green: 176/255.0, blue: 240/255.0, alpha: 1.0)
-        }
+    }
 }
 
 

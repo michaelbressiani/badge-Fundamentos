@@ -10,7 +10,7 @@ import UIKit
 class ListCredCardsViewController: UIViewController {
     
     @IBOutlet weak var listCredCardsTableView: UITableView!
-
+    
     public var viewModel: ListCredCardsViewModel?
     public var secureStorageCard: SecureStorageCard = SecureStorageCard()
     public var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")

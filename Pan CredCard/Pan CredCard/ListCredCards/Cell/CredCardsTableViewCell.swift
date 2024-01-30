@@ -34,7 +34,7 @@ class CredCardsTableViewCell: UITableViewCell {
     }
     
     func elementsConfig() {
-
+        
         titleCardNameLabel.text = "Cartão"
         titleCardNameLabel.font = UIFont.systemFont(ofSize: 11)
         titleCardNameLabel.textColor = UIColor.gray

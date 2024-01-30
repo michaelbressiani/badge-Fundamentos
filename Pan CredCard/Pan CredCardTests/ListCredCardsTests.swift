@@ -12,20 +12,20 @@ final class ListCredCardsTests: XCTestCase {
     
     var listCredCardsViewModel: ListCredCardsViewModel!
     var imageString: ImageString!
-
+    
     override func setUpWithError() throws {
         listCredCardsViewModel = ListCredCardsViewModel(viewController: UIViewController())
         imageString = ImageString()
     }
-
+    
     override func tearDownWithError() throws {
         listCredCardsViewModel = nil
         imageString = nil
     }
-
+    
     func testNumberOfRows() throws {
         let card1 = Card(id: 1, name: "Test1" , alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
-      
+        
         listCredCardsViewModel.cards = ListCards(cards: [card1])
         let numberOfRows = listCredCardsViewModel.numberOfRows()
         XCTAssertEqual(numberOfRows, 1)
@@ -60,17 +60,17 @@ final class ListCredCardsTests: XCTestCase {
     }
     
     func testAccessibilityCell() throws {
-    
-            let indexPath = IndexPath(row: 0, section: 0)
-            let cell = UITableViewCell()
-
-            let card1 = Card(id: 1, name: "Test1" , alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
         
-            listCredCardsViewModel.cards = ListCards(cards: [card1])
-            listCredCardsViewModel.accessibilityCell(cell: cell, indexPath: indexPath)
-            XCTAssertTrue(cell.isAccessibilityElement)
-            XCTAssertEqual(cell.accessibilityHint, "Cartão: Test1")
-        }
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = UITableViewCell()
+        
+        let card1 = Card(id: 1, name: "Test1" , alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
+        
+        listCredCardsViewModel.cards = ListCards(cards: [card1])
+        listCredCardsViewModel.accessibilityCell(cell: cell, indexPath: indexPath)
+        XCTAssertTrue(cell.isAccessibilityElement)
+        XCTAssertEqual(cell.accessibilityHint, "Cartão: Test1")
+    }
     
     func testConvertBase64ToImage() throws {
         
@@ -97,7 +97,7 @@ final class ListCredCardsTests: XCTestCase {
     }
     
     func testNavegationToDetailsCard() throws {
-            
+        
         let card = Card(id: 1, name: "Test1", alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
         listCredCardsViewModel.cards = ListCards(cards: [card])
         let emptyViewController = UIViewController()
@@ -105,7 +105,7 @@ final class ListCredCardsTests: XCTestCase {
         listCredCardsViewModel.viewController = emptyViewController
         listCredCardsViewModel.navegationToDetailsCard(indexPath: IndexPath(item: 0, section: 0))
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-               XCTAssertTrue(navigationController.topViewController is DetailsCardViewController)
-           }
+            XCTAssertTrue(navigationController.topViewController is DetailsCardViewController)
+        }
     }
 }

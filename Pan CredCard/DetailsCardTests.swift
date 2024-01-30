@@ -12,17 +12,17 @@ final class DetailsCardTests: XCTestCase {
     
     var detailsCardViewModel: DetailsCardViewModel!
     var imageString: ImageString!
-
+    
     override func setUpWithError() throws {
         detailsCardViewModel = DetailsCardViewModel()
         imageString = ImageString()
     }
-
+    
     override func tearDownWithError() throws {
         detailsCardViewModel = nil
         imageString = nil
     }
-
+    
     func testIsDebitOrCredit() throws {
         let trueAndTrueString = detailsCardViewModel.isDebitOrCredit(isDebit: true, isCredit: true)
         XCTAssertEqual(trueAndTrueString, "Débito e Crédito")
