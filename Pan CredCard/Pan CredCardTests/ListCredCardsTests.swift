@@ -12,21 +12,23 @@ final class ListCredCardsTests: XCTestCase {
     
     var listCredCardsViewModel: ListCredCardsViewModel!
     var imageString: ImageString!
+    var card: Card!
     
     override func setUpWithError() throws {
-        listCredCardsViewModel = ListCredCardsViewModel(viewController: UIViewController())
+        listCredCardsViewModel = ListCredCardsViewModel()
         imageString = ImageString()
+        card = Card(id: 1, name: "Test" , alias: "Test", credit: true, debit: true, number: "1", codSec: "1", image: "1")
     }
     
     override func tearDownWithError() throws {
         listCredCardsViewModel = nil
         imageString = nil
+        card = nil
     }
     
     func testNumberOfRows() throws {
-        let card1 = Card(id: 1, name: "Test1" , alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
         
-        listCredCardsViewModel.cards = ListCards(cards: [card1])
+        listCredCardsViewModel.cards = ListCards(cards: [card])
         let numberOfRows = listCredCardsViewModel.numberOfRows()
         XCTAssertEqual(numberOfRows, 1)
         
@@ -36,17 +38,16 @@ final class ListCredCardsTests: XCTestCase {
     }
     
     func testGetCardList() throws {
-        let card1 = Card(id: 1, name: "Test1" , alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
         
-        listCredCardsViewModel.cards = ListCards(cards: [card1])
+        listCredCardsViewModel.cards = ListCards(cards: [card])
         let indexPath: IndexPath = IndexPath(item: 0, section: 0)
         let getCards = listCredCardsViewModel.getCardList(indexPath: indexPath)
-        XCTAssertEqual(getCards.id, card1.id)
-        XCTAssertEqual(getCards.name, card1.name)
-        XCTAssertEqual(getCards.alias, card1.alias)
-        XCTAssertEqual(getCards.number, card1.number)
-        XCTAssertEqual(getCards.codSec, card1.codSec)
-        XCTAssertEqual(getCards.image, card1.image)
+        XCTAssertEqual(getCards.id, card.id)
+        XCTAssertEqual(getCards.name, card.name)
+        XCTAssertEqual(getCards.alias, card.alias)
+        XCTAssertEqual(getCards.number, card.number)
+        XCTAssertEqual(getCards.codSec, card.codSec)
+        XCTAssertEqual(getCards.image, card.image)
         
         listCredCardsViewModel.cards = nil
         let getCardsNil = listCredCardsViewModel.getCardList(indexPath: indexPath)
@@ -64,12 +65,10 @@ final class ListCredCardsTests: XCTestCase {
         let indexPath = IndexPath(row: 0, section: 0)
         let cell = UITableViewCell()
         
-        let card1 = Card(id: 1, name: "Test1" , alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
-        
-        listCredCardsViewModel.cards = ListCards(cards: [card1])
+        listCredCardsViewModel.cards = ListCards(cards: [card])
         listCredCardsViewModel.accessibilityCell(cell: cell, indexPath: indexPath)
         XCTAssertTrue(cell.isAccessibilityElement)
-        XCTAssertEqual(cell.accessibilityHint, "Cartão: Test1")
+        XCTAssertEqual(cell.accessibilityHint, "Cartão: Test")
     }
     
     func testConvertBase64ToImage() throws {
@@ -94,18 +93,5 @@ final class ListCredCardsTests: XCTestCase {
         let cardNumberTest = "5555 0000 1111 1234"
         let lastForDigitsTest = listCredCardsViewModel.lastForDigits(cardNumber: cardNumberTest)
         XCTAssertEqual(lastForDigitsTest, "1234")
-    }
-    
-    func testNavegationToDetailsCard() throws {
-        
-        let card = Card(id: 1, name: "Test1", alias: "Test1", credit: true, debit: true, number: "1", codSec: "1", image: "1")
-        listCredCardsViewModel.cards = ListCards(cards: [card])
-        let emptyViewController = UIViewController()
-        let navigationController = UINavigationController(rootViewController: emptyViewController)
-        listCredCardsViewModel.viewController = emptyViewController
-        listCredCardsViewModel.navegationToDetailsCard(indexPath: IndexPath(item: 0, section: 0))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            XCTAssertTrue(navigationController.topViewController is DetailsCardViewController)
-        }
     }
 }
