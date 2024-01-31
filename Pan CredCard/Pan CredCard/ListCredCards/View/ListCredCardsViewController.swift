@@ -10,8 +10,8 @@ class ListCredCardsViewController: UIViewController {
     
     @IBOutlet weak var listCredCardsTableView: UITableView!
     
-    public var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
-    public var secureStorageCard: SecureStorageCard = SecureStorageCard()
+    private var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
+    private var secureStorageCard: SecureStorageCard = SecureStorageCard()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +20,13 @@ class ListCredCardsViewController: UIViewController {
         viewModel.fetchCardsAlamofire()
     }
     
-    public func initialConfigs() {
+    private func initialConfigs() {
         self.navigationItem.hidesBackButton = true
         view.backgroundColor = UIColor.systemBackground
         navigationItem.backButtonTitle = ""
     }
     
-    public func configTableView() {
+    private func configTableView() {
         listCredCardsTableView.separatorStyle = .none
         listCredCardsTableView.delegate = self
         listCredCardsTableView.dataSource = self
@@ -34,7 +34,7 @@ class ListCredCardsViewController: UIViewController {
         listCredCardsTableView.reloadData()
     }
     
-    public func errorRequestAPI() {
+    private func errorRequestAPI() {
         
         let alert: UIAlertController  = UIAlertController(title: "Fora de serviço", message: "", preferredStyle: .alert)
         
@@ -47,7 +47,7 @@ class ListCredCardsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    public func navegationToDetailsCard(card: Card) {
+    private func navegationToDetailsCard(card: Card) {
         
         let dcString = String(describing: DetailsCardViewController.self)
         let vcString = UIStoryboard(name: dcString, bundle: nil).instantiateViewController(identifier: dcString) { coder -> DetailsCardViewController? in

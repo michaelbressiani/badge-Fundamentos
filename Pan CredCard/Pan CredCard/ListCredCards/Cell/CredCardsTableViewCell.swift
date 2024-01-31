@@ -21,7 +21,7 @@ class CredCardsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleCardNumberLabel: UILabel!
     @IBOutlet weak var cardNumberLabel: UILabel!
     
-    var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
+    private var viewModel: ListCredCardsViewModel = ListCredCardsViewModel()
     static let identifier: String = "CredCardsTableViewCell"
     
     static func nib() -> UINib {
@@ -33,7 +33,7 @@ class CredCardsTableViewCell: UITableViewCell {
         elementsConfig()
     }
     
-    func elementsConfig() {
+    private func elementsConfig() {
         
         titleCardNameLabel.text = "Cartão"
         titleCardNameLabel.font = UIFont.systemFont(ofSize: 11)

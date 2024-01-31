@@ -16,14 +16,14 @@ class SplashScreenViewController: UIViewController {
         navigationListCredCards()
     }
     
-    public func elementsConfig() {
+    private func elementsConfig() {
         titleAppLabel.text = "Pan CredCard"
         titleAppLabel.textColor = .white
         titleAppLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
         view.backgroundColor = UIColor(red: 0/255.0, green: 176/255.0, blue: 240/255.0, alpha: 1.0)
     }
     
-    public func navigationListCredCards() {
+    private func navigationListCredCards() {
         let vcString = String(describing: ListCredCardsViewController.self)
         let vc = UIStoryboard(name: vcString, bundle: nil).instantiateViewController(withIdentifier: vcString) as? ListCredCardsViewController
         

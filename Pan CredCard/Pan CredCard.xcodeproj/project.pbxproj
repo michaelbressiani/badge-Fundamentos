@@ -107,6 +107,17 @@
 			path = "Pan CredCardTests";
 			sourceTree = "<group>";
 		};
+		DF24F46C2B6A547C00FEE281 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */,
+				DF4AE4472B5C2C8E00C7D7C0 /* SceneDelegate.swift */,
+				DF4AE44E2B5C2C8F00C7D7C0 /* Assets.xcassets */,
+				DF4AE4502B5C2C8F00C7D7C0 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DF3493902B5C537C004BFD68 /* DetailsCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,10 +155,7 @@
 				DF3493902B5C537C004BFD68 /* DetailsCard */,
 				DF4AE45D2B5C2FA600C7D7C0 /* ListCredCards */,
 				DF4AE4592B5C2D0C00C7D7C0 /* SplashScreen */,
-				DF4AE4452B5C2C8E00C7D7C0 /* AppDelegate.swift */,
-				DF4AE4472B5C2C8E00C7D7C0 /* SceneDelegate.swift */,
-				DF4AE44E2B5C2C8F00C7D7C0 /* Assets.xcassets */,
-				DF4AE4502B5C2C8F00C7D7C0 /* LaunchScreen.storyboard */,
+				DF24F46C2B6A547C00FEE281 /* Resources */,
 				DF4AE4532B5C2C8F00C7D7C0 /* Info.plist */,
 			);
 			path = "Pan CredCard";
@@ -164,8 +172,8 @@
 		DF4AE45D2B5C2FA600C7D7C0 /* ListCredCards */ = {
 			isa = PBXGroup;
 			children = (
-				DF4AE4682B5C3C9200C7D7C0 /* ViewModel */,
 				DF4AE4672B5C3A6A00C7D7C0 /* View */,
+				DF4AE4682B5C3C9200C7D7C0 /* ViewModel */,
 				DF4AE4662B5C3A5100C7D7C0 /* Cell */,
 			);
 			path = ListCredCards;
