@@ -88,26 +88,25 @@ class DetailsCardViewController: UIViewController {
         let cardNameAcessibitilityString = "Esse nome do cartão"
         accessibilityLabel(label: cardNameLabel, descriptionLabelString: cardNameAcessibitilityString)
         
-        
         let titleCardAliasAcessibitilityString = "Faz referência ao nome da bandeira abaixo"
         accessibilityLabel(label: titleCardAliasLabel, descriptionLabelString: titleCardAliasAcessibitilityString)
         let cardAliasAcessibitilityString = "Essa é a bandeira do cartão"
-        accessibilityLabel(label: titleCardAliasLabel, descriptionLabelString: cardAliasAcessibitilityString)
+        accessibilityLabel(label: cardAliasLabel, descriptionLabelString: cardAliasAcessibitilityString)
         
         let titleCardIsCreditOrIsDebitAcessibilityString = "Faz referência a funcionalidade do cartão abaixo"
         accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel, descriptionLabelString: titleCardIsCreditOrIsDebitAcessibilityString)
         let cardIsCreditOrIsDebitAcessibilityString = "Diz se o cartão é débito ou crédito"
-        accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel, descriptionLabelString: cardIsCreditOrIsDebitAcessibilityString)
+        accessibilityLabel(label: cardIsCreditOrIsDebitLabel, descriptionLabelString: cardIsCreditOrIsDebitAcessibilityString)
         
         let titleCardNumberAcessibitilityString = "Faz referência ao número completo do cartão abaixo"
         accessibilityLabel(label: titleCardNumberLabel, descriptionLabelString: titleCardNumberAcessibitilityString)
         let cardNumberAcessibitilityString = "Esse é o número do cartão"
-        accessibilityLabel(label: titleCardNumberLabel, descriptionLabelString: cardNumberAcessibitilityString)
+        accessibilityLabel(label: cardNumberLabel, descriptionLabelString: cardNumberAcessibitilityString)
         
         let titleCardCodSecAcessibitilityString = "Faz referência ao código de segurança do cartão abaixo"
         accessibilityLabel(label: titleCardCodSecLabel, descriptionLabelString: titleCardCodSecAcessibitilityString)
         let cardCodSecAcessibitilityString = "Esse é o código de segurança do cartão"
-        accessibilityLabel(label: titleCardCodSecLabel, descriptionLabelString: cardCodSecAcessibitilityString)
+        accessibilityLabel(label: cardCodSecLabel, descriptionLabelString: cardCodSecAcessibitilityString)
     }
 }
 
