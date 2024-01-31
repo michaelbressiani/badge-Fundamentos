@@ -76,26 +76,38 @@ class DetailsCardViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
-    private func accessibilityLabel(label: UILabel) {
+    private func accessibilityLabel(label: UILabel, descriptionLabelString: String) {
         label.isAccessibilityElement = true
-        label.accessibilityHint = label.text
+        label.accessibilityHint = (label.text ?? "") + descriptionLabelString
     }
     
     private func accessebilityLabels() {
         
-        accessibilityLabel(label: titleCardNameLabel)
-        accessibilityLabel(label: cardNameLabel)
+        let titleCardNameAcessibilityString = "Faz referência ao nome do cartão abaixo"
+        accessibilityLabel(label: titleCardNameLabel, descriptionLabelString: titleCardNameAcessibilityString)
+        let cardNameAcessibitilityString = "Esse nome do cartão"
+        accessibilityLabel(label: cardNameLabel, descriptionLabelString: cardNameAcessibitilityString)
         
-        accessibilityLabel(label: titleCardAliasLabel)
-        accessibilityLabel(label: titleCardAliasLabel)
         
-        accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel)
-        accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel)
+        let titleCardAliasAcessibitilityString = "Faz referência ao nome da bandeira abaixo"
+        accessibilityLabel(label: titleCardAliasLabel, descriptionLabelString: titleCardAliasAcessibitilityString)
+        let cardAliasAcessibitilityString = "Essa é a bandeira do cartão"
+        accessibilityLabel(label: titleCardAliasLabel, descriptionLabelString: cardAliasAcessibitilityString)
         
-        accessibilityLabel(label: titleCardNumberLabel)
-        accessibilityLabel(label: titleCardNumberLabel)
+        let titleCardIsCreditOrIsDebitAcessibilityString = "Faz referência a funcionalidade do cartão abaixo"
+        accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel, descriptionLabelString: titleCardIsCreditOrIsDebitAcessibilityString)
+        let cardIsCreditOrIsDebitAcessibilityString = "Diz se o cartão é débito ou crédito"
+        accessibilityLabel(label: titleCardIsCreditOrIsDebitLabel, descriptionLabelString: cardIsCreditOrIsDebitAcessibilityString)
         
-        accessibilityLabel(label: titleCardCodSecLabel)
-        accessibilityLabel(label: titleCardCodSecLabel)
+        let titleCardNumberAcessibitilityString = "Faz referência ao número completo do cartão abaixo"
+        accessibilityLabel(label: titleCardNumberLabel, descriptionLabelString: titleCardNumberAcessibitilityString)
+        let cardNumberAcessibitilityString = "Esse é o número do cartão"
+        accessibilityLabel(label: titleCardNumberLabel, descriptionLabelString: cardNumberAcessibitilityString)
+        
+        let titleCardCodSecAcessibitilityString = "Faz referência ao código de segurança do cartão abaixo"
+        accessibilityLabel(label: titleCardCodSecLabel, descriptionLabelString: titleCardCodSecAcessibitilityString)
+        let cardCodSecAcessibitilityString = "Esse é o código de segurança do cartão"
+        accessibilityLabel(label: titleCardCodSecLabel, descriptionLabelString: cardCodSecAcessibitilityString)
     }
 }
+

@@ -3,7 +3,6 @@
 //  Pan CredCard
 //
 //  Created by Michael Bressiani on 20/01/24.
-//
 
 import UIKit
 
@@ -38,14 +37,20 @@ class CredCardsTableViewCell: UITableViewCell {
         titleCardNameLabel.text = "Cartão"
         titleCardNameLabel.font = UIFont.systemFont(ofSize: 11)
         titleCardNameLabel.textColor = UIColor.gray
+        let titleCardNameAcessibitilityString = "Faz referência ao nome do cartão abaixo"
+        accessibilityLabel(label: titleCardNameLabel, descriptionLabelString: titleCardNameAcessibitilityString)
         
         titleCardAliasLabel.text = "Bandeira"
         titleCardAliasLabel.font = UIFont.systemFont(ofSize: 11)
         titleCardAliasLabel.textColor = UIColor.gray
+        let titleCardAliasAcessibitilityString = "Faz referência ao nome da bandeira abaixo"
+        accessibilityLabel(label: titleCardAliasLabel, descriptionLabelString: titleCardAliasAcessibitilityString)
         
         titleCardNumberLabel.text = "Final do cartão"
         titleCardNumberLabel.font = UIFont.systemFont(ofSize: 11)
         titleCardNumberLabel.textColor = UIColor.gray
+        let titleCardNumberAcessibitilityString = "Faz referência ao final do cartão abaixo"
+        accessibilityLabel(label: titleCardNumberLabel, descriptionLabelString: titleCardNumberAcessibitilityString)
     }
     
     public func setupCell(card: Card) {
@@ -55,12 +60,23 @@ class CredCardsTableViewCell: UITableViewCell {
         
         cardNameLabel.text = card.name
         cardNameLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        let cardNameAcessibitilityString = "Esse nome do cartão"
+        accessibilityLabel(label: cardNameLabel, descriptionLabelString: cardNameAcessibitilityString)
         
         cardAliasLabel.text = card.alias
         cardAliasLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        let cardAliasAcessibitilityString = "Essa é a bandeira do cartão"
+        accessibilityLabel(label: cardAliasLabel, descriptionLabelString: cardAliasAcessibitilityString)
         
         cardNumberLabel.text = viewModel.lastForDigits(cardNumber: card.number)
         cardNumberLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        let cardNumberAcessibitilityString = "Esses são os quatro ultimos digitos do cartão"
+        accessibilityLabel(label: cardNumberLabel, descriptionLabelString: cardNumberAcessibitilityString)
+    }
+    
+    public func accessibilityLabel(label: UILabel, descriptionLabelString: String) {
+        label.isAccessibilityElement = true
+        label.accessibilityHint = (label.text ?? "") + descriptionLabelString
     }
 }
 

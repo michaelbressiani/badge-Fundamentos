@@ -68,7 +68,6 @@ extension ListCredCardsViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: CredCardsTableViewCell.identifier, for: indexPath) as? CredCardsTableViewCell
         
         cell?.setupCell(card: viewModel.getCardList(indexPath: indexPath))
-        viewModel.accessibilityCell(cell: cell ?? UITableViewCell(), indexPath: indexPath)
         
         return cell ?? UITableViewCell()
     }
