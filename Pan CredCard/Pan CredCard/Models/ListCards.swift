@@ -3,7 +3,6 @@
 //  Pan CredCard
 //
 //  Created by Michael Bressiani on 20/01/24.
-//
 
 struct ListCards: Codable {
     let cards: [Card]

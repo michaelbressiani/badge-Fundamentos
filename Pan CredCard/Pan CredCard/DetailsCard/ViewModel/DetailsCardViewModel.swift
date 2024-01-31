@@ -3,7 +3,6 @@
 //  Pan CredCard
 //
 //  Created by Michael Bressiani on 22/01/24.
-//
 
 import UIKit
 

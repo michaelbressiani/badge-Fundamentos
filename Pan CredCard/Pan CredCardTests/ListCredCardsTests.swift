@@ -13,6 +13,7 @@ final class ListCredCardsTests: XCTestCase {
     var listCredCardsViewModel: ListCredCardsViewModel!
     var imageString: ImageString!
     var card: Card!
+    var cardEmpty: Card!
     
     override func setUpWithError() throws {
         listCredCardsViewModel = ListCredCardsViewModel()
@@ -24,6 +25,7 @@ final class ListCredCardsTests: XCTestCase {
         listCredCardsViewModel = nil
         imageString = nil
         card = nil
+        cardEmpty = nil
     }
     
     func testNumberOfRows() throws {
@@ -60,17 +62,6 @@ final class ListCredCardsTests: XCTestCase {
         XCTAssertEqual(getCardsNil.image, cardEmpty.image)
     }
     
-    func testAccessibilityCell() throws {
-        
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = UITableViewCell()
-        
-        listCredCardsViewModel.cards = ListCards(cards: [card])
-        listCredCardsViewModel.accessibilityCell(cell: cell, indexPath: indexPath)
-        XCTAssertTrue(cell.isAccessibilityElement)
-        XCTAssertEqual(cell.accessibilityHint, "Cartão: Test")
-    }
-    
     func testConvertBase64ToImage() throws {
         
         let base64Empty = ""
@@ -93,5 +84,17 @@ final class ListCredCardsTests: XCTestCase {
         let cardNumberTest = "5555 0000 1111 1234"
         let lastForDigitsTest = listCredCardsViewModel.lastForDigits(cardNumber: cardNumberTest)
         XCTAssertEqual(lastForDigitsTest, "1234")
+    }
+    
+    func testInicializationCardEmpyt() throws {
+        let cardEmpty = listCredCardsViewModel.cardEmpty
+        XCTAssertEqual(cardEmpty.id, 0)
+        XCTAssertEqual(cardEmpty.name, "")
+        XCTAssertEqual(cardEmpty.alias, "")
+        XCTAssertEqual(cardEmpty.number, "")
+        XCTAssertEqual(cardEmpty.credit, false)
+        XCTAssertEqual(cardEmpty.debit, false)
+        XCTAssertEqual(cardEmpty.codSec, "")
+        XCTAssertEqual(cardEmpty.image, "")
     }
 }

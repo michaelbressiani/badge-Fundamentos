@@ -74,7 +74,7 @@ class CredCardsTableViewCell: UITableViewCell {
         accessibilityLabel(label: cardNumberLabel, descriptionLabelString: cardNumberAcessibitilityString)
     }
     
-    public func accessibilityLabel(label: UILabel, descriptionLabelString: String) {
+    private func accessibilityLabel(label: UILabel, descriptionLabelString: String) {
         label.isAccessibilityElement = true
         label.accessibilityHint = (label.text ?? "") + descriptionLabelString
     }
