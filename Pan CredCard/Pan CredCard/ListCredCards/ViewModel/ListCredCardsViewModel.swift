@@ -18,8 +18,8 @@ class ListCredCardsViewModel {
     weak var delegate: CardsViewModelProtocol?
     public var cardEmpty: Card = Card(id: 0, name: "", alias: "", credit: false, debit: false, number: "", codSec: "", image: "")
     
-    public func fetchCardsAlamofire() {
-        service.getCardsAlamofire { result in
+    public func fetchCardsMock() {
+        service.getCardsMock { result in
             switch result {
             case .success(let success):
                 self.cards = success

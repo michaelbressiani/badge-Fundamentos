@@ -17,7 +17,7 @@ class ListCredCardsViewController: UIViewController {
         super.viewDidLoad()
         initialConfigs()
         viewModel.delegate = self
-        viewModel.fetchCardsAlamofire()
+        viewModel.fetchCardsMock()
     }
     
     private func initialConfigs() {

@@ -27,7 +27,6 @@
 		DF4AE46A2B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4692B5C3CB400C7D7C0 /* ListCredCardsViewModel.swift */; };
 		DF4AE46D2B5C43DB00C7D7C0 /* ListCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE46C2B5C43DB00C7D7C0 /* ListCards.swift */; };
 		DF4AE4702B5C449600C7D7C0 /* Cards.json in Resources */ = {isa = PBXBuildFile; fileRef = DF4AE46F2B5C449600C7D7C0 /* Cards.json */; };
-		DF4AE4732B5C451B00C7D7C0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DF4AE4722B5C451B00C7D7C0 /* Alamofire */; };
 		DF4AE4762B5C45AB00C7D7C0 /* CardsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE4752B5C45AB00C7D7C0 /* CardsService.swift */; };
 		DF706F2F2B5E7FD100782671 /* DetailsCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF706F2E2B5E7FD100782671 /* DetailsCardViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -82,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF4AE4732B5C451B00C7D7C0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +289,6 @@
 			);
 			name = "Pan CredCard";
 			packageProductDependencies = (
-				DF4AE4722B5C451B00C7D7C0 /* Alamofire */,
 			);
 			productName = "Pan CredCard";
 			productReference = DF4AE4422B5C2C8E00C7D7C0 /* Pan CredCard.app */;
@@ -326,7 +323,6 @@
 			);
 			mainGroup = DF4AE4392B5C2C8E00C7D7C0;
 			packageReferences = (
-				DF4AE4712B5C451B00C7D7C0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = DF4AE4432B5C2C8E00C7D7C0 /* Products */;
 			projectDirPath = "";
@@ -666,25 +662,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		DF4AE4712B5C451B00C7D7C0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DF4AE4722B5C451B00C7D7C0 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DF4AE4712B5C451B00C7D7C0 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DF4AE43A2B5C2C8E00C7D7C0 /* Project object */;
 }
